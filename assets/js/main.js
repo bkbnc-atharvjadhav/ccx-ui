@@ -1,146 +1,80 @@
 /* ==========================================
-   CAMPUS CONNECT | MAIN.JS
-   ========================================== */
+   CAMPUS CONNECT - MAIN.JS V2
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ======================================
-       FAQ ACCORDION
-       ====================================== */
+    /* ==========================================
+       MOBILE MENU
+    ========================================== */
 
-    const faqItems = document.querySelectorAll(".faq-item");
+    const menuToggle =
+        document.querySelector(".menu-toggle");
 
-    faqItems.forEach(item => {
+    const mobileMenu =
+        document.querySelector(".mobile-menu");
 
-        const question =
-            item.querySelector(".faq-question");
+    if (menuToggle && mobileMenu) {
 
-        question.addEventListener("click", () => {
+        menuToggle.addEventListener("click", () => {
 
-            faqItems.forEach(faq => {
+            mobileMenu.classList.toggle("active");
 
-                if (faq !== item) {
-                    faq.classList.remove("open");
-                }
+            if (mobileMenu.classList.contains("active")) {
+
+                menuToggle.innerHTML = "✕";
+
+            } else {
+
+                menuToggle.innerHTML = "☰";
+
+            }
+
+        });
+
+        const mobileLinks =
+            mobileMenu.querySelectorAll("a");
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.innerHTML = "☰";
 
             });
 
-            item.classList.toggle("open");
-
-        });
-
-    });
-
-    /* ======================================
-       SCROLL REVEAL
-       ====================================== */
-
-    const revealElements =
-        document.querySelectorAll(
-            ".feature-card, .phone-card, .screenshot-grid img"
-        );
-
-    function revealOnScroll() {
-
-        const triggerPoint =
-            window.innerHeight * 0.85;
-
-        revealElements.forEach(element => {
-
-            const elementTop =
-                element.getBoundingClientRect().top;
-
-            if (elementTop < triggerPoint) {
-
-                element.classList.add("show");
-
-            }
-
         });
 
     }
 
-    revealOnScroll();
-
-    window.addEventListener(
-        "scroll",
-        revealOnScroll
-    );
-
-    /* ======================================
-       ACTIVE NAVIGATION
-       ====================================== */
-
-    const sections =
-        document.querySelectorAll("section");
-
-    const navLinks =
-        document.querySelectorAll(".nav-links a");
-
-    function updateActiveNav() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 120;
-
-            const sectionHeight =
-                section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY <
-                sectionTop + sectionHeight
-            ) {
-
-                current =
-                    section.getAttribute("id");
-
-            }
-
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") ===
-                `#${current}`
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNav
-    );
-
-    updateActiveNav();
-
-    /* ======================================
-       NAVBAR SHADOW
-       ====================================== */
+    /* ==========================================
+       NAVBAR SCROLL EFFECT
+    ========================================== */
 
     const navbar =
         document.querySelector(".navbar");
 
-    function navbarEffect() {
+    function handleNavbar() {
 
-        if (window.scrollY > 40) {
+        if (!navbar) return;
+
+        if (window.scrollY > 50) {
+
+            navbar.style.background =
+                "rgba(5,8,22,0.92)";
+
+            navbar.style.backdropFilter =
+                "blur(25px)";
 
             navbar.style.boxShadow =
-                "0 10px 35px rgba(0,0,0,0.35)";
+                "0 10px 40px rgba(0,0,0,0.35)";
 
         } else {
+
+            navbar.style.background =
+                "rgba(5,8,22,0.75)";
 
             navbar.style.boxShadow =
                 "none";
@@ -151,152 +85,257 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener(
         "scroll",
-        navbarEffect
+        handleNavbar
     );
 
-    navbarEffect();
+    handleNavbar();
 
-    /* ======================================
-       PHONE FLOAT EFFECT
-       ====================================== */
+    /* ==========================================
+       ACTIVE NAV LINK
+    ========================================== */
 
-    const phones =
-        document.querySelectorAll(".phone-card");
+    const currentPage =
+        window.location.pathname
+        .split("/")
+        .pop();
 
-    document.addEventListener(
-        "mousemove",
-        (e) => {
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
 
-            const x =
-                (window.innerWidth / 2 - e.clientX)
-                / 60;
+    navLinks.forEach(link => {
 
-            const y =
-                (window.innerHeight / 2 - e.clientY)
-                / 60;
+        const href =
+            link.getAttribute("href");
 
-            phones.forEach(phone => {
+        if (href === currentPage) {
 
-                phone.style.transform =
-                    `translate(${x}px, ${y}px)`;
-
-            });
+            link.style.color = "#ffffff";
+            link.style.fontWeight = "600";
 
         }
-    );
 
-    /* ======================================
-       SMOOTH SCROLL LINKS
-       ====================================== */
+    });
+
+    /* ==========================================
+       FADE UP ANIMATION
+    ========================================== */
+
+    const fadeElements =
+        document.querySelectorAll(
+            ".feature-card, .team-card, .metric-card, .roadmap-card, .journey-step, .showcase-phone"
+        );
+
+    fadeElements.forEach(el => {
+
+        el.classList.add("fade-up");
+
+    });
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+    fadeElements.forEach(el => {
+
+        observer.observe(el);
+
+    });
+
+    /* ==========================================
+       HERO METRIC COUNTER
+    ========================================== */
+
+    const counters =
+        document.querySelectorAll(
+            ".metric h3, .metric-card h3"
+        );
+
+    const animateCounter = counter => {
+
+        const targetText =
+            counter.innerText;
+
+        const target =
+            parseInt(targetText);
+
+        if (isNaN(target)) return;
+
+        let current = 0;
+
+        const increment =
+            Math.ceil(target / 35);
+
+        const timer =
+            setInterval(() => {
+
+                current += increment;
+
+                if (current >= target) {
+
+                    counter.innerText =
+                        targetText;
+
+                    clearInterval(timer);
+
+                } else {
+
+                    if (
+                        targetText.includes("+")
+                    ) {
+
+                        counter.innerText =
+                            current + "+";
+
+                    } else {
+
+                        counter.innerText =
+                            current;
+
+                    }
+
+                }
+
+            }, 30);
+
+    };
+
+    const counterObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        animateCounter(
+                            entry.target
+                        );
+
+                        counterObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+    counters.forEach(counter => {
+
+        counterObserver.observe(counter);
+
+    });
+
+    /* ==========================================
+       SMOOTH SCROLL
+    ========================================== */
 
     document
-        .querySelectorAll('a[href^="#"]')
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
         .forEach(anchor => {
 
             anchor.addEventListener(
                 "click",
                 function (e) {
 
-                    e.preventDefault();
-
                     const target =
                         document.querySelector(
-                            this.getAttribute("href")
+                            this.getAttribute(
+                                "href"
+                            )
                         );
 
-                    if (target) {
+                    if (!target) return;
 
-                        target.scrollIntoView({
-                            behavior: "smooth"
-                        });
+                    e.preventDefault();
 
-                    }
+                    target.scrollIntoView({
+
+                        behavior: "smooth"
+
+                    });
 
                 }
             );
 
         });
 
-    /* ======================================
-       EARLY ACCESS FORM
-       ====================================== */
+    /* ==========================================
+       IMAGE HOVER EFFECT
+    ========================================== */
 
-    const earlyAccessForm =
-        document.querySelector(
-            ".early-access-form"
+    const screenshots =
+        document.querySelectorAll(
+            ".showcase-phone img"
         );
 
-    if (earlyAccessForm) {
+    screenshots.forEach(img => {
 
-        earlyAccessForm.addEventListener(
-            "submit",
-            (e) => {
+        img.addEventListener(
+            "mousemove",
+            e => {
 
-                e.preventDefault();
+                const rect =
+                    img.getBoundingClientRect();
 
-                alert(
-                    "Thank you for your interest in Campus Connect! We will contact you soon."
-                );
+                const x =
+                    e.clientX - rect.left;
 
-                earlyAccessForm.reset();
+                const y =
+                    e.clientY - rect.top;
+
+                img.style.transform =
+                    `scale(1.04) translate(${(x - rect.width / 2) / 60}px, ${(y - rect.height / 2) / 60}px)`;
 
             }
         );
 
-    }
+        img.addEventListener(
+            "mouseleave",
+            () => {
 
-    /* ======================================
-       COUNTER ANIMATION
-       ====================================== */
-
-    const counters =
-        document.querySelectorAll(".counter");
-
-    counters.forEach(counter => {
-
-        const updateCounter = () => {
-
-            const target =
-                Number(
-                    counter.getAttribute(
-                        "data-target"
-                    )
-                );
-
-            const current =
-                Number(counter.innerText);
-
-            const increment =
-                target / 80;
-
-            if (current < target) {
-
-                counter.innerText =
-                    Math.ceil(
-                        current + increment
-                    );
-
-                setTimeout(
-                    updateCounter,
-                    20
-                );
-
-            } else {
-
-                counter.innerText =
-                    target;
+                img.style.transform =
+                    "scale(1)";
 
             }
-
-        };
-
-        updateCounter();
+        );
 
     });
 
-    /* ======================================
-       BUTTON GLOW EFFECT
-       ====================================== */
+    /* ==========================================
+       CTA BUTTON RIPPLE EFFECT
+    ========================================== */
 
     const buttons =
         document.querySelectorAll(
@@ -309,8 +348,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "mouseenter",
             () => {
 
-                button.style.boxShadow =
-                    "0 0 30px rgba(108,99,255,0.45)";
+                button.style.transform =
+                    "translateY(-3px) scale(1.02)";
 
             }
         );
@@ -319,8 +358,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "mouseleave",
             () => {
 
-                button.style.boxShadow =
-                    "none";
+                button.style.transform =
+                    "translateY(0) scale(1)";
 
             }
         );
@@ -331,4 +370,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ==========================================
    END OF FILE
-   ========================================== */
+========================================== */
