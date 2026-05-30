@@ -1991,3 +1991,150 @@ p{
 /* =======================================
    END OF FILE
 ======================================= */
+
+/* =========================================
+   FINAL PRODUCTION PATCH
+========================================= */
+
+.hero{
+
+    min-height:auto;
+
+    padding:160px 0 100px;
+
+}
+
+.hero .container{
+
+    max-width:1400px;
+
+}
+
+.section-header{
+
+    max-width:950px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.section-header h1{
+
+    max-width:950px;
+
+    margin:0 auto 24px;
+
+}
+
+.section-header p{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+}
+
+.showcase-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:40px;
+
+}
+
+.showcase-phone{
+
+    max-width:380px;
+
+    margin:0 auto;
+
+}
+
+.showcase-phone img{
+
+    width:100%;
+
+    height:720px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.team-card{
+
+    text-align:center;
+
+}
+
+.team-avatar{
+
+    margin:0 auto 20px;
+
+}
+
+.feature-card{
+
+    height:100%;
+
+}
+
+.card-grid{
+
+    align-items:stretch;
+
+}
+
+.metrics-grid{
+
+    align-items:stretch;
+
+}
+
+.footer-grid{
+
+    align-items:flex-start;
+
+}
+
+img{
+
+    max-width:100%;
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:130px 0 80px;
+
+    }
+
+    .section-header h1{
+
+        font-size:3rem;
+
+        line-height:1.1;
+
+    }
+
+    .showcase-phone{
+
+        max-width:320px;
+
+    }
+
+    .showcase-phone img{
+
+        height:620px;
+
+    }
+
+}
