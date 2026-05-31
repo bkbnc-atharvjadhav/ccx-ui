@@ -2196,8 +2196,30 @@ img{
 
 .nav-links a.active{
 
-    color:#ffffff !important;
+    color:#7c5cff !important;
 
     font-weight:700 !important;
+
+    position:relative;
+
+}
+
+.nav-links a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:100%;
+
+    height:2px;
+
+    background:#7c5cff;
+
+    border-radius:20px;
 
 }
