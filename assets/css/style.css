@@ -2196,8 +2196,8 @@ img{
 
 .nav-links a.active{
 
-    color:#ffffff;
+    color:#ffffff !important;
 
-    font-weight:700;
+    font-weight:700 !important;
 
 }
