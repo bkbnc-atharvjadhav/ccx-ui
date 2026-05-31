@@ -1,7 +1,6 @@
-/* =========================================
-   CAMPUS CONNECT V4
-   MAIN.JS FINAL
-========================================= */
+/* ==================================================
+   CAMPUS CONNECT V4 FINAL MASTER
+================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -17,15 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initFaqAccordion();
 
+    initMobileMenu();
+
     initBackToTop();
+
+    initFormHandler();
 
 });
 
-/* =========================================
+/* ==================================================
    ACTIVE NAVIGATION
-========================================= */
+================================================== */
 
-function initActiveNavigation() {
+function initActiveNavigation(){
 
     const currentPage =
         window.location.pathname
@@ -39,7 +42,7 @@ function initActiveNavigation() {
             const href =
                 link.getAttribute("href");
 
-            if (href === currentPage) {
+            if(href === currentPage){
 
                 link.classList.add("active");
 
@@ -49,39 +52,39 @@ function initActiveNavigation() {
 
 }
 
-/* =========================================
+/* ==================================================
    NAVBAR SCROLL EFFECT
-========================================= */
+================================================== */
 
-function initNavbarScroll() {
+function initNavbarScroll(){
 
     const navbar =
         document.querySelector(".navbar");
 
-    if (!navbar) return;
+    if(!navbar) return;
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 30) {
+        if(window.scrollY > 50){
 
             navbar.style.background =
-                "rgba(5,8,22,0.92)";
+                "rgba(5,8,22,.95)";
 
             navbar.style.backdropFilter =
                 "blur(24px)";
 
-            navbar.style.borderBottom =
-                "1px solid rgba(124,92,255,0.15)";
+            navbar.style.boxShadow =
+                "0 10px 30px rgba(0,0,0,.25)";
 
         }
 
-        else {
+        else{
 
             navbar.style.background =
-                "rgba(5,8,22,0.75)";
+                "rgba(5,8,22,.75)";
 
-            navbar.style.borderBottom =
-                "1px solid rgba(255,255,255,0.05)";
+            navbar.style.boxShadow =
+                "none";
 
         }
 
@@ -89,11 +92,69 @@ function initNavbarScroll() {
 
 }
 
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
+/* ==================================================
+   MOBILE MENU
+================================================== */
 
-function initSmoothScroll() {
+function initMobileMenu(){
+
+    const nav =
+        document.querySelector(".nav-links");
+
+    const container =
+        document.querySelector(".nav-container");
+
+    if(!nav || !container) return;
+
+    let button =
+        document.querySelector(".mobile-menu-btn");
+
+    if(!button){
+
+        button =
+            document.createElement("div");
+
+        button.className =
+            "mobile-menu-btn";
+
+        button.innerHTML = "☰";
+
+        container.appendChild(button);
+
+    }
+
+    button.addEventListener("click", () => {
+
+        nav.classList.toggle("active");
+
+        button.innerHTML =
+            nav.classList.contains("active")
+            ? "✕"
+            : "☰";
+
+    });
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                nav.classList.remove("active");
+
+                button.innerHTML = "☰";
+
+            });
+
+        });
+
+}
+
+/* ==================================================
+   SMOOTH SCROLL
+================================================== */
+
+function initSmoothScroll(){
 
     document
         .querySelectorAll('a[href^="#"]')
@@ -104,7 +165,7 @@ function initSmoothScroll() {
                 const targetId =
                     anchor.getAttribute("href");
 
-                if (
+                if(
                     targetId === "#" ||
                     targetId.length < 2
                 ) return;
@@ -112,14 +173,14 @@ function initSmoothScroll() {
                 const target =
                     document.querySelector(targetId);
 
-                if (!target) return;
+                if(!target) return;
 
                 e.preventDefault();
 
                 target.scrollIntoView({
 
-                    behavior: "smooth",
-                    block: "start"
+                    behavior:"smooth",
+                    block:"start"
 
                 });
 
@@ -129,53 +190,50 @@ function initSmoothScroll() {
 
 }
 
-/* =========================================
+/* ==================================================
    COUNTER ANIMATION
-========================================= */
+================================================== */
 
-function initCounterAnimation() {
+function initCounterAnimation(){
 
     const counters =
         document.querySelectorAll(
             ".metric-card h3"
         );
 
-    if (!counters.length) return;
+    if(!counters.length) return;
 
     const observer =
         new IntersectionObserver(entries => {
 
             entries.forEach(entry => {
 
-                if (!entry.isIntersecting)
-                    return;
+                if(!entry.isIntersecting) return;
 
                 const element =
                     entry.target;
 
-                const text =
+                const original =
                     element.innerText;
 
                 const number =
                     parseInt(
-                        text.replace(/\D/g, "")
+                        original.replace(/\D/g,"")
                     );
 
-                if (
-                    isNaN(number)
-                ) return;
+                if(isNaN(number)) return;
 
                 let current = 0;
 
                 const step =
-                    Math.ceil(number / 50);
+                    Math.ceil(number / 60);
 
                 const timer =
                     setInterval(() => {
 
                         current += step;
 
-                        if (current >= number) {
+                        if(current >= number){
 
                             current = number;
 
@@ -185,9 +243,9 @@ function initCounterAnimation() {
 
                         element.innerText =
                             current +
-                            text.replace(/[0-9]/g, "");
+                            original.replace(/[0-9]/g,"");
 
-                    }, 20);
+                    },20);
 
                 observer.unobserve(element);
 
@@ -195,33 +253,35 @@ function initCounterAnimation() {
 
         });
 
-    counters.forEach(counter =>
-        observer.observe(counter)
-    );
+    counters.forEach(counter => {
+
+        observer.observe(counter);
+
+    });
 
 }
 
-/* =========================================
+/* ==================================================
    SCROLL REVEAL
-========================================= */
+================================================== */
 
-function initScrollReveal() {
+function initScrollReveal(){
 
-    const elements =
+    const items =
         document.querySelectorAll(
-            ".feature-card, .metric-card, .journey-step, .roadmap-card"
+            ".feature-card, .metric-card, .journey-step, .roadmap-card, .team-card, .blog-card, .career-card"
         );
 
-    if (!elements.length) return;
+    if(!items.length) return;
 
-    elements.forEach(el => {
+    items.forEach(item => {
 
-        el.style.opacity = "0";
+        item.style.opacity = "0";
 
-        el.style.transform =
+        item.style.transform =
             "translateY(40px)";
 
-        el.style.transition =
+        item.style.transition =
             "all .7s ease";
 
     });
@@ -231,7 +291,7 @@ function initScrollReveal() {
 
             entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+                if(entry.isIntersecting){
 
                     entry.target.style.opacity =
                         "1";
@@ -243,56 +303,59 @@ function initScrollReveal() {
 
             });
 
-        }, {
-            threshold: 0.12
+        },{
+            threshold:.12
         });
 
-    elements.forEach(el =>
-        observer.observe(el)
-    );
+    items.forEach(item => {
+
+        observer.observe(item);
+
+    });
 
 }
 
-/* =========================================
+/* ==================================================
    FAQ ACCORDION
-========================================= */
+================================================== */
 
-function initFaqAccordion() {
+function initFaqAccordion(){
 
     const faqCards =
         document.querySelectorAll(
             ".faq-container .feature-card"
         );
 
-    if (!faqCards.length) return;
+    if(!faqCards.length) return;
 
     faqCards.forEach(card => {
 
         const answer =
             card.querySelector("p");
 
-        if (!answer) return;
+        const title =
+            card.querySelector("h3");
+
+        if(!answer || !title) return;
 
         answer.style.display = "none";
 
-        card.style.cursor = "pointer";
-
         card.addEventListener("click", () => {
 
-            const isOpen =
+            const open =
                 answer.style.display === "block";
 
             document
                 .querySelectorAll(
                     ".faq-container .feature-card p"
                 )
-                .forEach(item => {
+                .forEach(p => {
 
-                    item.style.display = "none";
+                    p.style.display = "none";
 
                 });
 
-            if (!isOpen) {
+            if(!open){
 
                 answer.style.display =
                     "block";
@@ -305,49 +368,101 @@ function initFaqAccordion() {
 
 }
 
-/* =========================================
-   BACK TO TOP BUTTON
-========================================= */
+/* ==================================================
+   CONTACT FORM
+================================================== */
 
-function initBackToTop() {
+function initFormHandler(){
+
+    const forms =
+        document.querySelectorAll("form");
+
+    if(!forms.length) return;
+
+    forms.forEach(form => {
+
+        form.addEventListener("submit", e => {
+
+            e.preventDefault();
+
+            const button =
+                form.querySelector(
+                    "button"
+                );
+
+            if(button){
+
+                const original =
+                    button.innerText;
+
+                button.innerText =
+                    "Submitting...";
+
+                setTimeout(() => {
+
+                    button.innerText =
+                        "Submitted ✓";
+
+                    setTimeout(() => {
+
+                        button.innerText =
+                            original;
+
+                    },2500);
+
+                },1000);
+
+            }
+
+        });
+
+    });
+
+}
+
+/* ==================================================
+   BACK TO TOP
+================================================== */
+
+function initBackToTop(){
 
     const button =
         document.createElement("button");
 
-    button.innerHTML = "↑";
-
     button.className =
         "back-to-top";
+
+    button.innerHTML = "↑";
 
     document.body.appendChild(button);
 
     button.style.position = "fixed";
     button.style.right = "24px";
     button.style.bottom = "24px";
-    button.style.width = "52px";
-    button.style.height = "52px";
+    button.style.width = "54px";
+    button.style.height = "54px";
     button.style.borderRadius = "50%";
     button.style.border = "none";
     button.style.cursor = "pointer";
-    button.style.zIndex = "999";
-    button.style.fontSize = "20px";
+    button.style.zIndex = "9999";
     button.style.display = "none";
     button.style.color = "#fff";
+    button.style.fontSize = "22px";
     button.style.background =
         "linear-gradient(135deg,#7c5cff,#4f46e5)";
     button.style.boxShadow =
-        "0 10px 30px rgba(124,92,255,.35)";
+        "0 12px 30px rgba(124,92,255,.35)";
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 400) {
+        if(window.scrollY > 400){
 
             button.style.display =
                 "block";
 
         }
 
-        else {
+        else{
 
             button.style.display =
                 "none";
@@ -360,9 +475,9 @@ function initBackToTop() {
 
         window.scrollTo({
 
-            top: 0,
+            top:0,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
@@ -370,17 +485,32 @@ function initBackToTop() {
 
 }
 
-/* =========================================
-   CONSOLE BANNER
-========================================= */
+/* ==================================================
+   PRELOAD IMAGE OPTIMIZATION
+================================================== */
+
+window.addEventListener("load", () => {
+
+    document
+        .querySelectorAll("img")
+        .forEach(img => {
+
+            img.loading = "lazy";
+
+        });
+
+});
+
+/* ==================================================
+   CONSOLE BRANDING
+================================================== */
 
 console.log(
 `
 🚀 Campus Connect V4
 
-One Platform.
-Every Campus Experience.
+One Platform. Every Campus Experience.
 
-Developed by LeadCircle.
+Built with ❤️ by LeadCircle
 `
 );
