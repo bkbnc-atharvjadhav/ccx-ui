@@ -1250,3 +1250,235 @@ textarea.contact-input{
     }
 
 }
+/* =====================================
+   HOME V3 FIX PATCH
+===================================== */
+
+.hero{
+
+    padding-top:160px;
+
+    min-height:100vh;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.hero-content h1{
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    margin:25px 0;
+
+}
+
+.hero-content p{
+
+    font-size:1.1rem;
+
+    color:#a1a1aa;
+
+    margin-bottom:30px;
+
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    background:rgba(124,92,255,.12);
+
+    border:1px solid rgba(124,92,255,.2);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-top:30px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-metrics{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.metric{
+
+    padding:20px;
+
+    background:rgba(15,23,42,.7);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+.metric h3{
+
+    color:#7c5cff;
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.metric span{
+
+    color:#a1a1aa;
+
+    font-size:.9rem;
+
+}
+
+.hero-showcase{
+
+    position:relative;
+
+    min-height:700px;
+
+}
+
+.phone-card{
+
+    position:absolute;
+
+    width:280px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.phone-card img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.phone-1{
+
+    top:20px;
+
+    left:20px;
+
+    transform:rotate(-10deg);
+
+}
+
+.phone-2{
+
+    top:120px;
+
+    right:40px;
+
+    z-index:2;
+
+}
+
+.phone-3{
+
+    bottom:0;
+
+    left:140px;
+
+    transform:rotate(10deg);
+
+}
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+}
+
+@media(max-width:992px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-showcase{
+
+        min-height:450px;
+
+    }
+
+    .phone-2,
+    .phone-3{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-metrics{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
