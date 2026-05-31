@@ -1,5 +1,6 @@
 /* ==========================================
-   CAMPUS CONNECT - MAIN.JS V2
+   CAMPUS CONNECT - MAIN.JS V2.1
+   Production Ready
 ========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,15 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mobileMenu.classList.toggle("active");
 
-            if (mobileMenu.classList.contains("active")) {
-
-                menuToggle.innerHTML = "✕";
-
-            } else {
-
-                menuToggle.innerHTML = "☰";
-
-            }
+            menuToggle.innerHTML =
+                mobileMenu.classList.contains("active")
+                    ? "✕"
+                    : "☰";
 
         });
 
@@ -46,6 +42,47 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         });
+
+        /* ESC KEY CLOSE */
+
+        document.addEventListener(
+            "keydown",
+            (e) => {
+
+                if (
+                    e.key === "Escape" &&
+                    mobileMenu.classList.contains("active")
+                ) {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuToggle.innerHTML = "☰";
+
+                }
+
+            }
+        );
+
+        /* CLICK OUTSIDE CLOSE */
+
+        document.addEventListener(
+            "click",
+            (e) => {
+
+                if (
+                    mobileMenu.classList.contains("active") &&
+                    !mobileMenu.contains(e.target) &&
+                    !menuToggle.contains(e.target)
+                ) {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuToggle.innerHTML = "☰";
+
+                }
+
+            }
+        );
 
     }
 
@@ -76,6 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
             navbar.style.background =
                 "rgba(5,8,22,0.75)";
 
+            navbar.style.backdropFilter =
+                "blur(20px)";
+
             navbar.style.boxShadow =
                 "none";
 
@@ -89,34 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     handleNavbar();
-
-    /* ==========================================
-       ACTIVE NAV LINK
-    ========================================== */
-
-    const currentPage =
-        window.location.pathname
-        .split("/")
-        .pop();
-
-    const navLinks =
-        document.querySelectorAll(
-            ".nav-links a"
-        );
-
-    navLinks.forEach(link => {
-
-        const href =
-            link.getAttribute("href");
-
-        if (href === currentPage) {
-
-            link.style.color = "#ffffff";
-            link.style.fontWeight = "600";
-
-        }
-
-    });
 
     /* ==========================================
        FADE UP ANIMATION
@@ -139,9 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 entries.forEach(entry => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                    if (entry.isIntersecting) {
 
                         entry.target.classList.add(
                             "show"
@@ -153,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             },
             {
-                threshold: 0.12
+                threshold: 0.15
             }
         );
 
@@ -227,9 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 entries.forEach(entry => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                    if (entry.isIntersecting) {
 
                         animateCounter(
                             entry.target
@@ -292,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     /* ==========================================
-       IMAGE HOVER EFFECT
+       SCREENSHOT HOVER
     ========================================== */
 
     const screenshots =
@@ -303,20 +311,11 @@ document.addEventListener("DOMContentLoaded", () => {
     screenshots.forEach(img => {
 
         img.addEventListener(
-            "mousemove",
-            e => {
-
-                const rect =
-                    img.getBoundingClientRect();
-
-                const x =
-                    e.clientX - rect.left;
-
-                const y =
-                    e.clientY - rect.top;
+            "mouseenter",
+            () => {
 
                 img.style.transform =
-                    `scale(1.04) translate(${(x - rect.width / 2) / 60}px, ${(y - rect.height / 2) / 60}px)`;
+                    "scale(1.03)";
 
             }
         );
@@ -334,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ==========================================
-       CTA BUTTON RIPPLE EFFECT
+       BUTTON HOVER EFFECT
     ========================================== */
 
     const buttons =
