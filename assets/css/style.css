@@ -2319,13 +2319,22 @@ section{
 
 .hero-metrics{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,minmax(180px,1fr));
     gap:20px;
+    max-width:520px;
 }
 
 .hero-stat{
+    min-height:120px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
     text-align:center;
     padding:20px;
+
     background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
@@ -2333,8 +2342,10 @@ section{
 
 .hero-stat h3{
     color:#7c5cff;
-    font-size:2rem;
-    margin-bottom:8px;
+    font-size:2.8rem;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:10px;
 }
 
 .hero-stat span{
