@@ -1,143 +1,659 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <link rel="icon"
+      type="image/png"
+      href="assets/images/logo/LOGO.png">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screenshots | Campus Connect</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Screenshots | Campus Connect
+    </title>
+
+    <meta name="description"
+        content="Explore the Campus Connect interface and experience the future of campus management.">
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">
-                Campus<span>Connect</span>
+
+            <a href="index.html"
+                class="logo">
+
+                <img src="assets/images/logo/LOGO.png"
+                    alt="Campus Connect">
+
+                <div class="logo-text">
+
+                    <h3>Campus Connect</h3>
+
+                    <span>
+                        One Platform. Every Campus Experience.
+                    </span>
+
+                </div>
+
             </a>
-            <div class="nav-links">
+
+            <nav class="nav-links">
+
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="features.html">Features</a>
                 <a href="modules.html">Modules</a>
-                <a href="roadmap.html">Roadmap</a>
+                <a href="screenshots.html" class="active">Screenshots</a>
                 <a href="team.html">Team</a>
                 <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="download.html" class="btn btn-primary nav-cta">Download Now</a>
-            </div>
-            <div class="mobile-menu-toggle">☰</div>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-badge">Visual Tour</div>
-            <h1>The Most <span class="text-gradient">Polished Interface</span></h1>
-            <p>Take a peek into the design of Campus Connect V6. Where utility meets aesthetics.</p>
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="download.html"
+                    class="btn-primary">
+
+                    Request Access
+
+                </a>
+
+                <button class="menu-toggle">
+                    ☰
+                </button>
+
+            </div>
+
         </div>
+
     </header>
 
-    <section class="section">
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="modules.html">Modules</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="download.html"
+            class="mobile-btn">
+
+            Request Access
+
+        </a>
+
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-glow glow-1"></div>
+
+        <div class="hero-glow glow-2"></div>
+
         <div class="container">
-            <div class="grid grid-2">
-                <div class="reveal">
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <div style="width: 100%; aspect-ratio: 4/5; background: #000; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
-                            [ Dashboard Preview Screenshot ]
-                        </div>
-                        <div style="padding: 1.5rem;">
-                            <h3>Unified Dashboard</h3>
-                            <p class="text-muted">A glance at everything that matters today.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <div style="width: 100%; aspect-ratio: 4/5; background: #000; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
-                            [ Timetable Preview Screenshot ]
-                        </div>
-                        <div style="padding: 1.5rem;">
-                            <h3>Smart Timetable</h3>
-                            <p class="text-muted">Intuitive scheduling at your fingertips.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <div style="width: 100%; aspect-ratio: 4/5; background: #000; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
-                            [ Attendance Hub Screenshot ]
-                        </div>
-                        <div style="padding: 1.5rem;">
-                            <h3>Attendance Hub</h3>
-                            <p class="text-muted">Clean analytics for your attendance logs.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <div style="width: 100%; aspect-ratio: 4/5; background: #000; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
-                            [ Notice Board Screenshot ]
-                        </div>
-                        <div style="padding: 1.5rem;">
-                            <h3>Official Notice Board</h3>
-                            <p class="text-muted">Stay informed with structured notifications.</p>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Product Showcase
+
+                </span>
+
+                <h1>
+
+                    Explore Campus Connect
+
+                </h1>
+
+                <p>
+
+                    A modern mobile-first experience built for
+                    students, faculty and institutions.
+
+                </p>
+
             </div>
+
         </div>
+
     </section>
 
-    <footer class="footer">
+    <!-- DASHBOARD -->
+
+    <section>
+
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
-                        Campus<span>Connect</span>
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Dashboard Experience
+
+                </span>
+
+                <h2>
+
+                    Everything At A Glance
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/dashboard.jpeg"
+                        alt="Dashboard"
+                        loading="lazy">
+
+                </div>
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/menu.jpeg"
+                        alt="Navigation Menu"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AUTHENTICATION -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Authentication
+
+                </span>
+
+                <h2>
+
+                    Secure Access
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/signin.jpeg"
+                        alt="Sign In"
+                        loading="lazy">
+
+                </div>
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/create_account.jpeg"
+                        alt="Create Account"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ATTENDANCE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Attendance Management
+
+                </span>
+
+                <h2>
+
+                    Track Academic Progress
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/attendance.jpeg"
+                        alt="Attendance"
+                        loading="lazy">
+
+                </div>
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/checkin.jpeg"
+                        alt="Check In"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TIMETABLE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Timetable System
+
+                </span>
+
+                <h2>
+
+                    Never Miss A Lecture
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/timetable.jpeg"
+                        alt="Timetable"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ANALYTICS -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Analytics
+
+                </span>
+
+                <h2>
+
+                    Data Driven Insights
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/lecture_analytics.jpeg"
+                        alt="Analytics"
+                        loading="lazy">
+
+                </div>
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/lectures.jpeg"
+                        alt="Lectures"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROFILE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    User Profile
+
+                </span>
+
+                <h2>
+
+                    Personalized Experience
+
+                </h2>
+
+            </div>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-phone">
+
+                    <img src="assets/images/screenshots/profile.jpeg"
+                        alt="Profile"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCT STATS -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Platform Scale
+
+                </span>
+
+                <h2>
+
+                    Built For Growth
+
+                </h2>
+
+            </div>
+
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+
+                    <h3>30+</h3>
+
+                    <p>
+                        Screens
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>10+</h3>
+
+                    <p>
+                        Core Modules
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>4</h3>
+
+                    <p>
+                        User Roles
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>1</h3>
+
+                    <p>
+                        Unified Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+                <span class="section-tag">
+
+                    Experience It Yourself
+
+                </span>
+
+                <h2>
+
+                    Ready To Explore Campus Connect?
+
+                </h2>
+
+                <p>
+
+                    Join the future of campus management
+                    and student engagement.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="download.html"
+                        class="btn-primary">
+
+                        Request Early Access
+
                     </a>
-                    <p>The ultimate student super-app designed to streamline campus life and academic success.</p>
+
+                    <a href="contact.html"
+                        class="btn-secondary">
+
+                        Contact Team
+
+                    </a>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="team.html">Team</a></li>
-                    </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <img src="assets/images/logo/LOGO.png"
+                        alt="Campus Connect"
+                        class="footer-logo">
+
+                    <p>
+
+                        One Platform.
+                        Every Campus Experience.
+
+                    </p>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
+
+                <div class="footer-column">
+
+                    <h4>Platform</h4>
+
                     <ul>
+
                         <li><a href="features.html">Features</a></li>
                         <li><a href="modules.html">Modules</a></li>
-                        <li><a href="roadmap.html">Roadmap</a></li>
-                        <li><a href="download.html">Download</a></li>
+                        <li><a href="screenshots.html">Screenshots</a></li>
+
                     </ul>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
+
+                <div class="footer-column">
+
+                    <h4>Company</h4>
+
                     <ul>
+
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Resources</h4>
+
+                    <ul>
+
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="support.html">Support</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms</a></li>
+
                     </ul>
+
                 </div>
+
+                <div class="footer-column">
+
+                    <h4>Contact</h4>
+
+                    <ul>
+
+                        <li>+91 9172782265</li>
+                        <li>leadcircle.global@gmail.com</li>
+                        <li>@campusconnect.in</li>
+
+                    </ul>
+
+                </div>
+
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Campus Connect. All rights reserved.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                </div>
+
+                <p>
+
+                    © 2026 Campus Connect by LeadCircle.
+                    All Rights Reserved.
+
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
-    <script src="main.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+<section class="section">
+<div class="container">
+<h2>Experience Campus Connect</h2>
+<p>
+Every screen in Campus Connect is designed to solve a real student problem—from tracking attendance
+and managing schedules to staying updated with notices and opportunities.
+</p>
+
+<h3>Student Dashboard</h3>
+<p>Your personalized overview of academics, announcements and campus activities.</p>
+
+<h3>Attendance Tracking</h3>
+<p>Monitor attendance percentages and academic progress in real time.</p>
+
+<h3>Lecture Analytics</h3>
+<p>Gain insights into learning patterns and academic performance.</p>
+
+<h3>Timetable Management</h3>
+<p>Stay organized with schedules, lectures and important academic events.</p>
+
+<h3>Student Profile</h3>
+<p>Manage personal information, records and preferences from one place.</p>
+</div>
+</section>
 </body>
+
 </html>

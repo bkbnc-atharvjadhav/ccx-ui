@@ -1,136 +1,455 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <link rel="icon"
+      type="image/png"
+      href="assets/images/logo/LOGO.png">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap | Campus Connect</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Roadmap | Campus Connect
+    </title>
+
+    <meta name="description"
+        content="Explore the future roadmap and vision of Campus Connect.">
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">
-                Campus<span>Connect</span>
+
+            <a href="index.html"
+                class="logo">
+
+                <img src="assets/images/logo/LOGO.png"
+                    alt="Campus Connect">
+
+                <div class="logo-text">
+
+                    <h3>Campus Connect</h3>
+
+                    <span>
+                        One Platform. Every Campus Experience.
+                    </span>
+
+                </div>
+
             </a>
-            <div class="nav-links">
+
+            <nav class="nav-links">
+
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="features.html">Features</a>
                 <a href="modules.html">Modules</a>
-                <a href="roadmap.html" class="active">Roadmap</a>
+                <a href="screenshots.html">Screenshots</a>
                 <a href="team.html">Team</a>
                 <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="download.html" class="btn btn-primary nav-cta">Download Now</a>
-            </div>
-            <div class="mobile-menu-toggle">☰</div>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-badge">Future Vision</div>
-            <h1>Building the <span class="text-gradient">Future of Education</span></h1>
-            <p>We're not stopping at V6. Here is our plan to make campus life even more seamless.</p>
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="download.html"
+                    class="btn-primary">
+
+                    Request Access
+
+                </a>
+
+                <button class="menu-toggle">
+                    ☰
+                </button>
+
+            </div>
+
         </div>
+
     </header>
 
-    <section class="section">
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="modules.html">Modules</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="download.html"
+            class="mobile-btn">
+
+            Request Access
+
+        </a>
+
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-glow glow-1"></div>
+
+        <div class="hero-glow glow-2"></div>
+
         <div class="container">
-            <div class="grid" style="max-width: 800px; margin: 0 auto; gap: 3rem;">
-                
-                <div class="reveal" style="display: flex; gap: 2rem; position: relative;">
-                    <div style="width: 20px; height: 20px; background: var(--primary); border-radius: 50%; margin-top: 5px; z-index: 2;"></div>
-                    <div style="padding-bottom: 3rem; border-left: 2px solid var(--border-color); padding-left: 2rem;">
-                        <div style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Q2 2026 (Current)</div>
-                        <h3>V6 Global Rollout</h3>
-                        <p class="text-muted">Full deployment of the V6 architecture across all partner campuses, introducing the new Dark Premium UI and core modular system.</p>
-                    </div>
-                </div>
 
-                <div class="reveal" style="display: flex; gap: 2rem; position: relative;">
-                    <div style="width: 20px; height: 20px; background: var(--border-color); border-radius: 50%; margin-top: 5px; z-index: 2;"></div>
-                    <div style="padding-bottom: 3rem; border-left: 2px solid var(--border-color); padding-left: 2rem;">
-                        <div style="color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">Q3 2026</div>
-                        <h3>AI Study Companion</h3>
-                        <p class="text-muted">Integrating LLMs to provide automated lecture summaries, flashcard generation, and personalized study scheduling based on exam dates.</p>
-                    </div>
-                </div>
+            <div class="section-header">
 
-                <div class="reveal" style="display: flex; gap: 2rem; position: relative;">
-                    <div style="width: 20px; height: 20px; background: var(--border-color); border-radius: 50%; margin-top: 5px; z-index: 2;"></div>
-                    <div style="padding-bottom: 3rem; border-left: 2px solid var(--border-color); padding-left: 2rem;">
-                        <div style="color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">Q4 2026</div>
-                        <h3>Campus Finance Integration</h3>
-                        <p class="text-muted">A secure digital wallet for canteen payments, library fines, and tuition fees, integrated directly into the student profile.</p>
-                    </div>
-                </div>
+                <span class="section-tag">
 
-                <div class="reveal" style="display: flex; gap: 2rem; position: relative;">
-                    <div style="width: 20px; height: 20px; background: var(--border-color); border-radius: 50%; margin-top: 5px; z-index: 2;"></div>
-                    <div style="padding-bottom: 3rem; border-left: 2px solid var(--border-color); padding-left: 2rem;">
-                        <div style="color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">Q1 2027</div>
-                        <h3>Alumni Networking Portal</h3>
-                        <p class="text-muted">Expanding the platform to alumni to facilitate mentorship, job referrals, and lifelong connection with the institution.</p>
-                    </div>
-                </div>
+                    Product Roadmap
+
+                </span>
+
+                <h1>
+
+                    Building The Future
+                    Of Campus Technology
+
+                </h1>
+
+                <p>
+
+                    Our roadmap outlines how Campus Connect
+                    will continue evolving into a complete
+                    campus operating system.
+
+                </p>
 
             </div>
+
         </div>
+
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
-                        Campus<span>Connect</span>
-                    </a>
-                    <p>The ultimate student super-app designed to streamline campus life and academic success.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="team.html">Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="modules.html">Modules</a></li>
-                        <li><a href="roadmap.html" class="active">Roadmap</a></li>
-                        <li><a href="download.html">Download</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Support</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Campus Connect. All rights reserved.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- PHASE 1 -->
 
-    <script src="main.js"></script>
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Phase 1
+
+                </span>
+
+                <h2>
+
+                    Foundation Platform
+
+                </h2>
+
+            </div>
+
+            <div class="roadmap-card">
+
+                <ul>
+
+                    <li>✅ Attendance Management</li>
+                    <li>✅ Timetable System</li>
+                    <li>✅ Student Dashboard</li>
+                    <li>✅ Communication Tools</li>
+                    <li>✅ Learning Circles</li>
+                    <li>✅ E-Cell Integration</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PHASE 2 -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Phase 2
+
+                </span>
+
+                <h2>
+
+                    Smart Campus Features
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+
+                    <h3>🤖 AI Assistant</h3>
+
+                    <p>
+                        Intelligent student support and guidance.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>📈 Advanced Analytics</h3>
+
+                    <p>
+                        Institutional insights and reporting.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>📊 Smart Dashboards</h3>
+
+                    <p>
+                        Real-time campus monitoring.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>⚡ Workflow Automation</h3>
+
+                    <p>
+                        Reduce manual administrative work.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PHASE 3 -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Phase 3
+
+                </span>
+
+                <h2>
+
+                    Career & Growth Ecosystem
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+
+                    <h3>💼 Placement Module</h3>
+
+                    <p>
+                        Placement tracking and opportunities.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>🎓 Alumni Network</h3>
+
+                    <p>
+                        Strong alumni engagement ecosystem.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>🏢 Internship Hub</h3>
+
+                    <p>
+                        Internship discovery and management.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>📜 Certificates</h3>
+
+                    <p>
+                        Digital achievements and credentials.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PHASE 4 -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Future Vision
+
+                </span>
+
+                <h2>
+
+                    Campus Super App
+
+                </h2>
+
+            </div>
+
+            <div class="comparison-card solution">
+
+                <p>
+
+                    Campus Connect aims to become the
+                    complete operating system for educational
+                    institutions, bringing academics,
+                    engagement, entrepreneurship, careers,
+                    analytics and community into one platform.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+                <span class="section-tag">
+
+                    Join The Journey
+
+                </span>
+
+                <h2>
+
+                    Help Shape The Future
+
+                </h2>
+
+                <p>
+
+                    Be part of the next generation of
+                    campus innovation.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="download.html"
+                        class="btn-primary">
+
+                        Request Access
+
+                    </a>
+
+                    <a href="contact.html"
+                        class="btn-secondary">
+
+                        Contact Team
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Use same footer from previous V2 pages -->
+
+    <script src="assets/js/main.js"></script>
+
+
+<section class="section">
+<div class="container">
+<h2>Future Roadmap</h2>
+<p>
+Campus Connect is evolving from a student-focused platform into a complete digital campus ecosystem.
+</p>
+
+<h3>Phase 1 — Foundation & Launch</h3>
+<p>Core attendance, timetable, notices, resources and student engagement modules.</p>
+
+<h3>Phase 2 — Campus Intelligence</h3>
+<p>Advanced dashboards, analytics and smarter communication systems.</p>
+
+<h3>Phase 3 — AI Powered Features</h3>
+<p>AI assistance, recommendations and automated student support.</p>
+
+<h3>Phase 4 — National Expansion</h3>
+<p>Scaling Campus Connect across institutions and student communities.</p>
+</div>
+</section>
 </body>
+
 </html>

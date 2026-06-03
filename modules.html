@@ -1,165 +1,685 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <link rel="icon"
+      type="image/png"
+      href="assets/images/logo/LOGO.png">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modules | Campus Connect</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Modules | Campus Connect
+    </title>
+
+    <meta name="description"
+        content="Explore the powerful modules that make Campus Connect a complete campus ecosystem.">
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">
-                Campus<span>Connect</span>
+
+            <a href="index.html"
+                class="logo">
+
+                <img src="assets/images/logo/LOGO.png"
+                    alt="Campus Connect">
+
+                <div class="logo-text">
+
+                    <h3>
+                        Campus Connect
+                    </h3>
+
+                    <span>
+                        One Platform. Every Campus Experience.
+                    </span>
+
+                </div>
+
             </a>
-            <div class="nav-links">
+
+            <nav class="nav-links">
+
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="features.html">Features</a>
                 <a href="modules.html" class="active">Modules</a>
-                <a href="roadmap.html">Roadmap</a>
+                <a href="screenshots.html">Screenshots</a>
                 <a href="team.html">Team</a>
                 <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="download.html" class="btn btn-primary nav-cta">Download Now</a>
-            </div>
-            <div class="mobile-menu-toggle">☰</div>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-badge">Ecosystem</div>
-            <h1>Modular <span class="text-gradient">Intelligence</span></h1>
-            <p>Campus Connect is built with a modular architecture, allowing students and institutions to customize their experience.</p>
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="download.html"
+                    class="btn-primary">
+
+                    Request Access
+
+                </a>
+
+                <button class="menu-toggle">
+                    ☰
+                </button>
+
+            </div>
+
         </div>
+
     </header>
 
-    <section class="section">
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="modules.html">Modules</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="download.html"
+            class="mobile-btn">
+
+            Request Access
+
+        </a>
+
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-glow glow-1"></div>
+
+        <div class="hero-glow glow-2"></div>
+
         <div class="container">
-            <div class="grid grid-3">
-                <div class="card reveal">
-                    <div class="card-icon">🎓</div>
-                    <h3>Academic Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">The core of the app, handling everything related to your courses and grades.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Syllabus Tracking</li>
-                        <li>• Grade Calculator</li>
-                        <li>• Assignment Deadlines</li>
-                        <li>• Course Materials</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">🏫</div>
-                    <h3>Campus Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Navigate and interact with your physical campus environment efficiently.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Interactive Campus Map</li>
-                        <li>• Facility Booking</li>
-                        <li>• Admin Office Directory</li>
-                        <li>• Emergency Contacts</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">💬</div>
-                    <h3>Social Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Connect with your peers and engage in extracurricular activities.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Student Clubs & Societies</li>
-                        <li>• Peer Study Groups</li>
-                        <li>• Campus Event Feed</li>
-                        <li>• Interest-based Forums</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">📊</div>
-                    <h3>Administration Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">A powerful backend for faculty and admins to manage the student body.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Bulk Notice Publishing</li>
-                        <li>• Attendance Management</li>
-                        <li>• Performance Analytics</li>
-                        <li>• Student Record Archive</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">💼</div>
-                    <h3>Placement Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Everything required to transition from a student to a professional.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Company Database</li>
-                        <li>• Interview Scheduling</li>
-                        <li>• Application Tracking</li>
-                        <li>• Placement Statistics</li>
-                    </ul>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">🛠️</div>
-                    <h3>Utility Module</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Essential tools that make daily campus life smoother and faster.</p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li>• Digital ID Card</li>
-                        <li>• Fee Payment Integration</li>
-                        <li>• Library Catalog Search</li>
-                        <li>• Feedback System</li>
-                    </ul>
-                </div>
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Platform Modules
+
+                </span>
+
+                <h1>
+
+                    One Platform.
+                    Multiple Powerful Modules.
+
+                </h1>
+
+                <p>
+
+                    Campus Connect combines academics,
+                    administration, communication,
+                    engagement and entrepreneurship
+                    into a single integrated ecosystem.
+
+                </p>
+
             </div>
+
         </div>
+
     </section>
 
-    <footer class="footer">
+    <!-- STUDENT MODULE -->
+
+    <section>
+
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
-                        Campus<span>Connect</span>
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Student Module
+
+                </span>
+
+                <h2>
+
+                    Empowering Students
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+                    <h3>📊 Attendance</h3>
+                    <p>View attendance records and monitor academic progress.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📅 Timetable</h3>
+                    <p>Access class schedules and upcoming lectures.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🏆 Achievements</h3>
+                    <p>Track accomplishments and participation milestones.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🎯 Leaderboards</h3>
+                    <p>Engage through points, rankings and rewards.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>💬 Messaging</h3>
+                    <p>Communicate with peers and faculty members.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🪪 Digital ID</h3>
+                    <p>Access your digital identity within the platform.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FACULTY MODULE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Faculty Module
+
+                </span>
+
+                <h2>
+
+                    Teaching Made Simpler
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+                    <h3>📋 Attendance Control</h3>
+                    <p>Manage lecture attendance efficiently.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📚 Lecture Management</h3>
+                    <p>Plan and organize academic activities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>👨‍🎓 Student Monitoring</h3>
+                    <p>Track participation and academic engagement.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📈 Analytics</h3>
+                    <p>Review attendance and performance insights.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ADMIN MODULE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Admin Module
+
+                </span>
+
+                <h2>
+
+                    Command Center For Institutions
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+                    <h3>👨‍🎓 Student Management</h3>
+                    <p>Approve, verify and manage student records.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>👩‍🏫 Faculty Management</h3>
+                    <p>Manage faculty profiles and responsibilities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🏢 Department Management</h3>
+                    <p>Create and manage departments and programmes.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🏫 Class Management</h3>
+                    <p>Organize academic classes and structures.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📅 Timetable Management</h3>
+                    <p>Build and distribute institutional schedules.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📢 Announcements</h3>
+                    <p>Broadcast updates across the institution.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SUPER ADMIN -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Super Admin Module
+
+                </span>
+
+                <h2>
+
+                    Enterprise Level Control
+
+                </h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="feature-card">
+                    <h3>🌍 Multi-College Management</h3>
+                    <p>Manage multiple institutions from one platform.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔐 Security Center</h3>
+                    <p>Monitor platform access and security controls.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📊 Global Analytics</h3>
+                    <p>Institution-wide reporting and monitoring.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⚙️ Platform Settings</h3>
+                    <p>Configure and manage platform-wide operations.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- E-CELL MODULE -->
+
+    <section class="ecell-section">
+
+        <div class="container">
+
+            <div class="ecell-wrapper">
+
+                <div class="ecell-content">
+
+                    <span class="section-tag">
+
+                        E-Cell Module
+
+                    </span>
+
+                    <h2>
+
+                        Entrepreneurship Ecosystem
+
+                    </h2>
+
+                    <p>
+
+                        Support innovation, entrepreneurship
+                        and startup culture through dedicated
+                        tools built for student innovators.
+
+                    </p>
+
+                    <div class="ecell-features">
+
+                        <div>🚀 Startup Activities</div>
+                        <div>🏪 Stall Requests</div>
+                        <div>🎯 Innovation Challenges</div>
+                        <div>🌍 Community Engagement</div>
+
+                    </div>
+
+                </div>
+
+                <div class="ecell-card">
+
+                    <h3>
+
+                        Included Features
+
+                    </h3>
+
+                    <ul>
+
+                        <li>Startup Programs</li>
+                        <li>Challenge Management</li>
+                        <li>Event Coordination</li>
+                        <li>Community Building</li>
+                        <li>Innovation Tracking</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ANALYTICS MODULE -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Analytics & Reporting
+
+                </span>
+
+                <h2>
+
+                    Data Driven Decisions
+
+                </h2>
+
+            </div>
+
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+
+                    <h3>30+</h3>
+
+                    <p>
+                        Screens
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>10+</h3>
+
+                    <p>
+                        Modules
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>4</h3>
+
+                    <p>
+                        User Roles
+                    </p>
+
+                </div>
+
+                <div class="metric-card">
+
+                    <h3>1</h3>
+
+                    <p>
+                        Unified Ecosystem
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+                <span class="section-tag">
+
+                    Ready To Explore?
+
+                </span>
+
+                <h2>
+
+                    Discover Every Module In Action
+
+                </h2>
+
+                <p>
+
+                    Experience a unified platform built
+                    for modern educational institutions.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="screenshots.html"
+                        class="btn-primary">
+
+                        View Screenshots
+
                     </a>
-                    <p>The ultimate student super-app designed to streamline campus life and academic success.</p>
+
+                    <a href="download.html"
+                        class="btn-secondary">
+
+                        Request Access
+
+                    </a>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="team.html">Team</a></li>
-                    </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <img src="assets/images/logo/LOGO.png"
+                        alt="Campus Connect"
+                        class="footer-logo">
+
+                    <p>
+                        One Platform. Every Campus Experience.
+                    </p>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
+
+                <div class="footer-column">
+
+                    <h4>Platform</h4>
+
                     <ul>
+
                         <li><a href="features.html">Features</a></li>
-                        <li><a href="modules.html" class="active">Modules</a></li>
-                        <li><a href="roadmap.html">Roadmap</a></li>
-                        <li><a href="download.html">Download</a></li>
+                        <li><a href="modules.html">Modules</a></li>
+                        <li><a href="screenshots.html">Screenshots</a></li>
+
                     </ul>
+
                 </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
+
+                <div class="footer-column">
+
+                    <h4>Company</h4>
+
                     <ul>
+
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Resources</h4>
+
+                    <ul>
+
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="support.html">Support</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms</a></li>
+
                     </ul>
+
                 </div>
+
+                <div class="footer-column">
+
+                    <h4>Contact</h4>
+
+                    <ul>
+
+                        <li>+91 9172782265</li>
+                        <li>leadcircle.global@gmail.com</li>
+                        <li>@campusconnect.in</li>
+
+                    </ul>
+
+                </div>
+
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Campus Connect. All rights reserved.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                </div>
+
+                <p>
+
+                    © 2026 Campus Connect by LeadCircle.
+                    All Rights Reserved.
+
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
-    <script src="main.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+<section class="section">
+<div class="container">
+<h2>Platform Ecosystem</h2>
+<p>
+Campus Connect is more than a collection of modules. It is a connected ecosystem
+where academics, communication, engagement and career growth work together.
+</p>
+
+<h3>Academic Suite</h3>
+<p>Attendance, Timetable, Resources, Analytics and Learning Support.</p>
+
+<h3>Campus Life Suite</h3>
+<p>Events, Notices, Clubs, Communities and Student Engagement.</p>
+
+<h3>Career Suite</h3>
+<p>Placements, Internships, Opportunities and Career Development.</p>
+
+<h3>Administration Suite</h3>
+<p>Digital workflows, reporting and operational efficiency.</p>
+</div>
+</section>
 </body>
+
 </html>

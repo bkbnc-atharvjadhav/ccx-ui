@@ -1,130 +1,591 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Blog | Campus Connect</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="nav-logo">
-                Campus<span>Connect</span>
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html"
+           class="nav-logo">
+
+            Campus<span>Connect</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="features.html">Features</a>
+
+            <a href="modules.html">Modules</a>
+
+            <a href="roadmap.html">Roadmap</a>
+
+            <a href="team.html">Team</a>
+
+            <a href="blog.html" class="active">Blog</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="download.html"
+               class="btn btn-primary nav-cta">
+
+                Download Now
+
             </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="features.html">Features</a>
-                <a href="modules.html">Modules</a>
-                <a href="roadmap.html">Roadmap</a>
-                <a href="team.html">Team</a>
-                <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="download.html" class="btn btn-primary nav-cta">Download Now</a>
-            </div>
-            <div class="mobile-menu-toggle">☰</div>
+
         </div>
-    </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-badge">Insights</div>
-            <h1>The Student <span class="text-gradient">Perspective</span></h1>
-            <p>Stories, tips, and updates from the world of campus technology and student life.</p>
+        <div class="mobile-menu-toggle">
+
+            ☰
+
         </div>
-    </header>
 
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-3">
-                
-                <div class="card reveal">
-                    <div style="width: 100%; height: 200px; background: #111; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                        [ Article Image ]
-                    </div>
-                    <div style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">PRODUCT UPDATE</div>
-                    <h3>Introducing Campus Connect V6</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Our most ambitious redesign yet. Explore the new dark premium theme and modular system.</p>
-                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Read More</a>
-                </div>
+    </div>
 
-                <div class="card reveal">
-                    <div style="width: 100%; height: 200px; background: #111; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                        [ Article Image ]
-                    </div>
-                    <div style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">STUDENT LIFE</div>
-                    <h3>5 Ways to Manage Stress</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">Balancing academics and personal life can be tough. Here are our top tips for students.</p>
-                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Read More</a>
-                </div>
+</nav>
 
-                <div class="card reveal">
-                    <div style="width: 100%; height: 200px; background: #111; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                        [ Article Image ]
-                    </div>
-                    <div style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">CAREER TIPS</div>
-                    <h3>Cracking the Placement Cycle</h3>
-                    <p class="text-muted" style="margin-bottom: 1.5rem;">A comprehensive guide to preparing for campus placements and landing your dream job.</p>
-                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Read More</a>
-                </div>
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-grid-bg"></div>
+
+    <div class="hero-glow glow-1"></div>
+
+    <div class="hero-glow glow-2"></div>
+
+    <div class="container">
+
+        <div class="hero-badge">
+
+            Campus Connect Blog
+
+        </div>
+
+        <h1>
+
+            Ideas.
+            Innovation.
+            Impact.
+
+        </h1>
+
+        <p>
+
+            Discover insights, stories and ideas
+            shaping the future of education,
+            technology and student success.
+
+        </p>
+
+    </div>
+
+</header>
+
+<!-- FEATURED ARTICLE -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="highlight-achievement">
+
+            <span class="section-tag">
+
+                Featured Article
+
+            </span>
+
+            <h2>
+
+                Building Campus Connect:
+                The Journey Behind The Platform
+
+            </h2>
+
+            <p>
+
+                From a simple student idea
+                to a vision for smarter,
+                more connected campuses.
+
+                Explore the story behind
+                Campus Connect and its mission.
+
+            </p>
+
+            <a href="articles/building-campus-connect.html"
+               class="btn-primary">
+
+                Read Featured Article
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LATEST ARTICLES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+
+                Latest Articles
+
+            </span>
+
+            <h2>
+
+                Explore Insights & Stories
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Education
+
+                </span>
+
+                <h3>
+
+                    The Future Of Digital Campuses
+
+                </h3>
+
+                <p>
+
+                    How technology is transforming
+                    learning experiences, communication
+                    and student engagement.
+
+                </p>
+
+                <a href="articles/future-of-digital-campuses.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Innovation
+
+                </span>
+
+                <h3>
+
+                    Student-Led Innovation
+                    In Higher Education
+
+                </h3>
+
+                <p>
+
+                    Why students are becoming
+                    powerful drivers of educational
+                    transformation.
+
+                </p>
+
+                <a href="articles/student-led-innovation.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Technology
+
+                </span>
+
+                <h3>
+
+                    AI In Education:
+                    Opportunities For Students
+
+                </h3>
+
+                <p>
+
+                    Understanding how artificial
+                    intelligence can improve
+                    learning outcomes.
+
+                </p>
+
+                <a href="articles/ai-in-education.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Campus Life
+
+                </span>
+
+                <h3>
+
+                    Creating A Connected Campus
+
+                </h3>
+
+                <p>
+
+                    Communication, collaboration
+                    and community building in
+                    modern institutions.
+
+                </p>
+
+                <a href="articles/connected-campus.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Analytics
+
+                </span>
+
+                <h3>
+
+                    From Attendance Registers
+                    To Smart Analytics
+
+                </h3>
+
+                <p>
+
+                    The evolution of academic
+                    monitoring and student success.
+
+                </p>
+
+                <a href="articles/smart-analytics.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+            <article class="feature-card">
+
+                <span class="section-tag">
+
+                    Student Success
+
+                </span>
+
+                <h3>
+
+                    Why Student Engagement Matters
+
+                </h3>
+
+                <p>
+
+                    Exploring the relationship
+                    between participation and
+                    academic achievement.
+
+                </p>
+
+                <a href="articles/student-engagement.html">
+
+                    Read Article →
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+
+                Categories
+
+            </span>
+
+            <h2>
+
+                Topics We Explore
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <div class="feature-card">
+                Education
+            </div>
+
+            <div class="feature-card">
+                Innovation
+            </div>
+
+            <div class="feature-card">
+                Technology
+            </div>
+
+            <div class="feature-card">
+                Student Success
+            </div>
+
+            <div class="feature-card">
+                Digital Campuses
+            </div>
+
+            <div class="feature-card">
+                AI & Future Trends
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY WE WRITE -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="highlight-achievement">
+
+            <h2>
+
+                Why We Write
+
+            </h2>
+
+            <p>
+
+                The Campus Connect Blog exists
+                to share ideas, experiences
+                and innovations that help students,
+                educators and institutions
+                build better learning environments.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="highlight-achievement">
+
+            <h2>
+
+                Stay Updated
+
+            </h2>
+
+            <p>
+
+                Follow the Campus Connect journey
+                and discover new ideas shaping
+                the future of education.
+
+            </p>
+
+            <a href="contact.html"
+               class="btn-primary">
+
+                Join The Community
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="nav-logo">
+
+                    Campus<span>Connect</span>
+
+                </a>
+
+                <p>
+
+                    The Student Super App
+                    For Modern Campuses.
+
+                </p>
 
             </div>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
-                        Campus<span>Connect</span>
-                    </a>
-                    <p>The ultimate student super-app designed to streamline campus life and academic success.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html" class="active">Blog</a></li>
-                        <li><a href="team.html">Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="modules.html">Modules</a></li>
-                        <li><a href="roadmap.html">Roadmap</a></li>
-                        <li><a href="download.html">Download</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Support</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Campus Connect. All rights reserved.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+            <div class="footer-links">
 
-    <script src="main.js"></script>
+                <h4>
+
+                    Explore
+
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="features.html">Features</a>
+                    </li>
+
+                    <li>
+                        <a href="modules.html">Modules</a>
+                    </li>
+
+                    <li>
+                        <a href="roadmap.html">Roadmap</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>
+
+                    Resources
+
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">FAQ</a>
+                    </li>
+
+                    <li>
+                        <a href="support.html">Support</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 Campus Connect.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
