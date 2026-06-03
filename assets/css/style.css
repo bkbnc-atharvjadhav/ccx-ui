@@ -1,2895 +1,469 @@
-/* ==================================================
-   CAMPUS CONNECT V6 MASTER
-   PART 1
-   GLOBAL RESET + VARIABLES + LAYOUT + NAVBAR
-================================================== */
 
-/* ==========================================
-   RESET
-========================================== */
+/*! 
+ * Campus Connect V6 - Premium SaaS Design System
+ * Theme: Dark Premium
+ * Primary Color: #7C5CFF
+ */
 
-*,
-*::before,
-*::after{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+    --primary: #7C5CFF;
+    --primary-hover: #6a4ae6;
+    --bg-dark: #030712;
+    --bg-card: #0B0F1A;
+    --bg-accent: #111827;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-primary: rgba(124, 92, 255, 0.3);
+    --glass: rgba(3, 7, 18, 0.8);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-width: 1200px;
+    --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-html{
-    scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-    font-family:
-    Inter,
-    "Segoe UI",
-    sans-serif;
-
-    background:#030712;
-
-    color:#ffffff;
-
-    line-height:1.7;
-
-    overflow-x:hidden;
-
-    text-rendering:optimizeLegibility;
-
-    -webkit-font-smoothing:antialiased;
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-img{
-    max-width:100%;
-    display:block;
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+ul {
+    list-style: none;
 }
 
-ul{
-    list-style:none;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-button,
-input,
-textarea,
-select{
-    font:inherit;
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
-/* ==========================================
-   DESIGN TOKENS
-========================================== */
-
-:root{
-
-    /* COLORS */
-
-    --bg-primary:#030712;
-
-    --bg-secondary:#0A1022;
-
-    --card-bg:
-    rgba(255,255,255,.03);
-
-    --card-hover:
-    rgba(255,255,255,.05);
-
-    --primary:#7C5CFF;
-
-    --primary-hover:#6D4CFF;
-
-    --text-primary:#FFFFFF;
-
-    --text-secondary:#B6BDD1;
-
-    --text-muted:#8892A6;
-
-    --border:
-    rgba(255,255,255,.08);
-
-    --glass:
-    rgba(255,255,255,.04);
-
-    /* RADIUS */
-
-    --radius-sm:16px;
-
-    --radius-md:24px;
-
-    --radius-lg:32px;
-
-    --radius-pill:999px;
-
-    /* SHADOWS */
-
-    --shadow-card:
-    0 10px 30px rgba(0,0,0,.25);
-
-    --shadow-floating:
-    0 20px 60px rgba(124,92,255,.20);
-
-    --shadow-hero:
-    0 40px 100px rgba(124,92,255,.25);
-
-    /* TRANSITIONS */
-
-    --transition:
-    .3s ease;
-
+.text-gradient {
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* ==========================================
-   TYPOGRAPHY
-========================================== */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-weight:800;
-    line-height:1.1;
+.text-muted {
+    color: var(--text-muted);
 }
 
-h1{
-    font-size:
-    clamp(3rem,6vw,6rem);
+/* --- Layout --- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-h2{
-    font-size:
-    clamp(2rem,4vw,4rem);
+.section {
+    padding: 100px 0;
 }
 
-h3{
-    font-size:1.3rem;
+.grid {
+    display: grid;
+    gap: 2rem;
 }
 
-p{
-    color:var(--text-secondary);
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* --- Components --- */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+    gap: 0.5rem;
 }
 
-.text-muted{
-    color:var(--text-muted);
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
 }
 
-.text-center{
-    text-align:center;
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(124, 92, 255, 0.3);
 }
 
-.text-primary{
-    color:var(--primary);
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
 }
 
-/* ==========================================
-   CONTAINER SYSTEM
-========================================== */
-
-.container{
-
-    width:90%;
-
-    max-width:1400px;
-
-    margin:0 auto;
-
+.btn-secondary:hover {
+    background-color: var(--bg-accent);
+    border-color: var(--primary);
 }
 
-.container-sm{
-
-    width:90%;
-
-    max-width:1100px;
-
-    margin:0 auto;
-
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
-/* ==========================================
-   SECTION SYSTEM
-========================================== */
-
-section{
-
-    position:relative;
-
-    padding:120px 0;
-
+.navbar.scrolled {
+    padding: 0.5rem 0;
 }
 
-.section-header{
-
-    text-align:center;
-
-    max-width:900px;
-
-    margin:0 auto 70px;
-
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
-.section-header h2{
-
-    margin-bottom:20px;
-
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.section-header p{
-
-    max-width:760px;
-
-    margin:0 auto;
-
-    font-size:1.1rem;
-
+.nav-logo span {
+    color: var(--primary);
 }
 
-/* ==========================================
-   SECTION TAG
-========================================== */
-
-.section-tag{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    padding:10px 18px;
-
-    border-radius:var(--radius-pill);
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-    color:#C4B5FD;
-
-    font-size:.9rem;
-
-    font-weight:600;
-
-    margin-bottom:22px;
-
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
-/* ==========================================
-   GLOBAL GRID SYSTEM
-========================================== */
-
-.grid-2{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:40px;
-
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
-.grid-3{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
 }
 
-.grid-4{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:25px;
-
+.nav-cta {
+    margin-left: 1rem;
 }
 
-/* ==========================================
-   NAVBAR
-========================================== */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:9999;
-
-    background:
-    rgba(3,7,18,.80);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:
-    1px solid rgba(255,255,255,.05);
-
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
 }
 
-.nav-container{
-
-    min-height:86px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
+/* Footer */
+.footer {
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+    padding: 80px 0 40px;
 }
 
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 60px;
 }
 
-.logo img{
-
-    width:52px;
-
-    height:52px;
-
-    object-fit:contain;
-
+.footer-brand p {
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+    max-width: 300px;
 }
 
-.logo-text h3{
-
-    font-size:1.05rem;
-
-    margin-bottom:4px;
-
+.footer-links h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
-.logo-text span{
-
-    font-size:.8rem;
-
-    color:var(--text-muted);
-
+.footer-links ul li {
+    margin-bottom: 0.75rem;
 }
 
-/* ==========================================
-   NAVIGATION
-========================================== */
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:28px;
-
+.footer-links ul li a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-.nav-links a{
-
-    color:#D4D4D8;
-
-    font-size:.95rem;
-
-    font-weight:500;
-
-    transition:var(--transition);
-
-    position:relative;
-
+.footer-links ul li a:hover {
+    color: var(--primary);
+    padding-left: 5px;
 }
 
-.nav-links a:hover{
-
-    color:#FFFFFF;
-
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-.nav-links a.active{
-
-    color:var(--primary);
-
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+    height: 100%;
 }
 
-.nav-links a.active::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:100%;
-
-    height:2px;
-
-    border-radius:999px;
-
-    background:var(--primary);
-
+.card:hover {
+    border-color: var(--border-primary);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
 }
 
-/* ==========================================
-   DOWNLOAD BUTTON
-========================================== */
-
-.nav-download{
-
-    padding:12px 20px;
-
-    border-radius:16px;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-hover)
-    );
-
-    color:#FFFFFF !important;
-
+.card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(124, 92, 255, 0.1);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.nav-download:hover{
-
-    transform:
-    translateY(-2px);
-
+/* Hero Section */
+.hero {
+    padding: 180px 0 100px;
+    text-align: center;
+    position: relative;
 }
 
-/* ==========================================
-   MOBILE NAV
-========================================== */
-
-.mobile-menu-btn{
-
-    display:none;
-
-    border:none;
-
-    background:none;
-
-    color:#FFFFFF;
-
-    font-size:1.8rem;
-
-    cursor:pointer;
-
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(124, 92, 255, 0.1);
+    border: 1px solid var(--border-primary);
+    color: var(--primary);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.6s ease-out;
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
 
-@media (max-width:992px){
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 1s ease-out;
+}
 
-    .grid-4{
-        grid-template-columns:repeat(2,1fr);
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Team Cards */
+.team-card {
+    text-align: center;
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.2);
+}
+
+/* FAQ Accordion */
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    background: var(--bg-card);
+    color: var(--text-muted);
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+/* 404 Page */
+.error-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 10rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 2rem;
+        transition: var(--transition);
     }
 
-    .grid-3{
-        grid-template-columns:repeat(2,1fr);
+    .nav-links.active {
+        left: 0;
     }
 
-}
-
-@media (max-width:768px){
-
-    section{
-        padding:90px 0;
+    .mobile-menu-toggle {
+        display: block;
     }
 
-    .mobile-menu-btn{
-        display:block;
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
-
-    .logo-text span{
-        display:none;
-    }
-
-    .nav-links{
-
-        position:fixed;
-
-        top:86px;
-
-        left:0;
-
-        width:100%;
-
-        background:#030712;
-
-        border-top:
-        1px solid rgba(255,255,255,.05);
-
-        flex-direction:column;
-
-        gap:0;
-
-        display:none;
-
-        padding:20px 0;
-
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:16px;
-
-    }
-
-    .grid-2,
-    .grid-3,
-    .grid-4{
-
-        grid-template-columns:1fr;
-
-    }
-
 }
-
-@media (max-width:576px){
-
-    .container{
-        width:94%;
-    }
-
-    h1{
-        font-size:2.8rem;
-    }
-
-    h2{
-        font-size:2rem;
-    }
-
-}
-/* ==================================================
-   CAMPUS CONNECT V6 MASTER
-   PART 2
-   BUTTONS + CARDS + HERO SYSTEM
-================================================== */
-
-/* ==========================================
-   BUTTON SYSTEM
-========================================== */
-
-.btn-primary,
-.btn-secondary{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:16px 28px;
-
-    border-radius:16px;
-
-    font-weight:700;
-
-    transition:var(--transition);
-
-    cursor:pointer;
-
-}
-
-.btn-primary{
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-hover)
-    );
-
-    color:#ffffff;
-
-    box-shadow:
-    0 10px 30px rgba(124,92,255,.25);
-
-}
-
-.btn-primary:hover{
-
-    transform:
-    translateY(-3px);
-
-    box-shadow:
-    0 20px 40px rgba(124,92,255,.35);
-
-}
-
-.btn-secondary{
-
-    border:1px solid var(--border);
-
-    background:var(--glass);
-
-    color:#ffffff;
-
-}
-
-.btn-secondary:hover{
-
-    border-color:
-    rgba(124,92,255,.35);
-
-    transform:
-    translateY(-3px);
-
-}
-
-.hero-buttons{
-
-    display:flex;
-
-    gap:16px;
-
-    flex-wrap:wrap;
-
-    margin-top:32px;
-
-}
-
-/* ==========================================
-   UNIVERSAL CARD SYSTEM
-========================================== */
-
-.card,
-.feature-card,
-.metric-card,
-.team-card,
-.blog-card,
-.download-card,
-.contact-card,
-.roadmap-card,
-.journey-step{
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    border-radius:
-    var(--radius-md);
-
-    transition:
-    var(--transition);
-
-}
-
-.card:hover,
-.feature-card:hover,
-.metric-card:hover,
-.team-card:hover,
-.blog-card:hover,
-.download-card:hover,
-.contact-card:hover,
-.roadmap-card:hover,
-.journey-step:hover{
-
-    transform:
-    translateY(-6px);
-
-    border-color:
-    rgba(124,92,255,.25);
-
-    box-shadow:
-    var(--shadow-card);
-
-}
-
-/* ==========================================
-   ICON BOX
-========================================== */
-
-.icon-box{
-
-    width:68px;
-
-    height:68px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:1.8rem;
-
-    margin-bottom:20px;
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-/* ==========================================
-   HERO SYSTEM
-========================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding-top:180px;
-
-    padding-bottom:120px;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-300px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:1200px;
-
-    height:1200px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-    circle,
-    rgba(124,92,255,.12),
-    transparent 65%
-    );
-
-    pointer-events:none;
-
-}
-
-.hero-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1.1fr .9fr;
-
-    align-items:center;
-
-    gap:70px;
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.hero-content h1{
-
-    margin-bottom:24px;
-
-    letter-spacing:-.04em;
-
-}
-
-.hero-content p{
-
-    font-size:1.15rem;
-
-    max-width:700px;
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   TRUST PILLS
-========================================== */
-
-.trust-pills{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:40px;
-
-}
-
-.trust-pills span{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:10px 18px;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    color:#cbd5e1;
-
-    font-size:.9rem;
-
-}
-
-/* ==========================================
-   HERO VISUAL
-========================================== */
-
-.hero-visual{
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-.hero-phone{
-
-    width:100%;
-
-    max-width:380px;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.hero-phone img{
-
-    width:100%;
-
-    border-radius:36px;
-
-    box-shadow:
-    var(--shadow-hero);
-
-}
-
-/* ==========================================
-   FLOATING CARDS
-========================================== */
-
-.floating-card{
-
-    position:absolute;
-
-    padding:16px 20px;
-
-    border-radius:20px;
-
-    background:
-    rgba(15,23,42,.92);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:
-    blur(18px);
-
-    box-shadow:
-    var(--shadow-floating);
-
-    z-index:3;
-
-}
-
-.floating-card h4{
-
-    font-size:1rem;
-
-    margin-bottom:6px;
-
-}
-
-.floating-card p{
-
-    font-size:.9rem;
-
-    color:var(--text-muted);
-
-}
-
-/* TOP RIGHT */
-
-.float-top{
-
-    top:10%;
-
-    right:-40px;
-}
-
-/* BOTTOM LEFT */
-
-.float-bottom{
-
-    bottom:12%;
-
-    left:-50px;
-}
-
-/* ==========================================
-   IMPACT STATS
-========================================== */
-
-.hero-metrics{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:20px;
-
-    margin-top:70px;
-
-}
-
-.hero-stat{
-
-    text-align:center;
-
-    padding:24px;
-
-    border-radius:20px;
-
-    background:
-    rgba(255,255,255,.03);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-}
-
-.hero-stat h3{
-
-    font-size:3rem;
-
-    line-height:1;
-
-    color:var(--primary);
-
-    margin-bottom:10px;
-
-}
-
-.hero-stat span{
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   FEATURE CARDS
-========================================== */
-
-.feature-card{
-
-    padding:32px;
-
-}
-
-.feature-card h3{
-
-    margin-bottom:16px;
-
-}
-
-.feature-card p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:1100px){
-
-    .hero-grid{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-    .hero-content p{
-
-        margin:0 auto;
-
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
-
-    }
-
-    .trust-pills{
-
-        justify-content:center;
-
-    }
-
-    .hero-metrics{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-    .float-top,
-    .float-bottom{
-
-        display:none;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .hero{
-
-        min-height:auto;
-
-        padding-top:150px;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-    .btn-primary,
-    .btn-secondary{
-
-        width:100%;
-
-        max-width:320px;
-
-    }
-
-    .hero-metrics{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .hero-phone{
-
-        max-width:320px;
-
-    }
-
-}
-/* ==================================================
-   CAMPUS CONNECT V6 MASTER
-   PART 3
-   FEATURES + MODULES + SHOWCASE + JOURNEY + IMPACT
-================================================== */
-
-/* ==========================================
-   FEATURES SECTION
-========================================== */
-
-.features-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.feature-card{
-
-    padding:32px;
-
-    height:100%;
-
-}
-
-.feature-card h3{
-
-    margin-bottom:14px;
-
-}
-
-.feature-card p{
-
-    color:var(--text-secondary);
-
-    margin-bottom:18px;
-
-}
-
-.feature-card ul{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-}
-
-.feature-card ul li{
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   MODULES SECTION
-========================================== */
-
-.modules-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:25px;
-
-}
-
-.module-card{
-
-    padding:30px;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    transition:
-    var(--transition);
-
-}
-
-.module-card:hover{
-
-    transform:
-    translateY(-6px);
-
-    box-shadow:
-    var(--shadow-card);
-
-    border-color:
-    rgba(124,92,255,.25);
-
-}
-
-.module-card h3{
-
-    margin-bottom:14px;
-
-}
-
-.module-card p{
-
-    color:var(--text-secondary);
-
-}
-
-.module-icon{
-
-    width:64px;
-
-    height:64px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:1.6rem;
-
-    margin-bottom:20px;
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-/* ==========================================
-   SCREENSHOT SHOWCASE
-========================================== */
-
-.showcase-wrapper{
-
-    max-width:1200px;
-
-    margin:0 auto;
-
-}
-
-.featured-screenshot{
-
-    overflow:hidden;
-
-    border-radius:32px;
-
-    background:
-    rgba(255,255,255,.03);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    margin-bottom:40px;
-
-    box-shadow:
-    var(--shadow-hero);
-
-}
-
-.featured-screenshot img{
-
-    width:100%;
-
-    display:block;
-
-}
-
-.screenshot-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:25px;
-
-}
-
-.screenshot-card{
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    transition:
-    var(--transition);
-
-}
-
-.screenshot-card:hover{
-
-    transform:
-    translateY(-6px);
-
-    box-shadow:
-    var(--shadow-card);
-
-}
-
-.screenshot-card img{
-
-    width:100%;
-
-    display:block;
-
-}
-
-.screenshot-content{
-
-    padding:22px;
-
-}
-
-.screenshot-content h3{
-
-    margin-bottom:10px;
-
-}
-
-.screenshot-content p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   STUDENT JOURNEY TIMELINE
-========================================== */
-
-.journey-timeline{
-
-    position:relative;
-
-    max-width:1200px;
-
-    margin:0 auto;
-
-}
-
-.journey-timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:50%;
-
-    left:0;
-
-    width:100%;
-
-    height:2px;
-
-    background:
-    rgba(124,92,255,.20);
-
-    transform:
-    translateY(-50%);
-
-}
-
-.journey-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,1fr);
-
-    gap:20px;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.journey-step{
-
-    text-align:center;
-
-    padding:30px 20px;
-
-}
-
-.journey-number{
-
-    width:70px;
-
-    height:70px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-hover)
-    );
-
-    color:white;
-
-    font-weight:800;
-
-    font-size:1.2rem;
-
-}
-
-.journey-step h3{
-
-    margin-bottom:10px;
-
-}
-
-.journey-step p{
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   IMPACT SECTION
-========================================== */
-
-.impact-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:24px;
-
-}
-
-.impact-card{
-
-    text-align:center;
-
-    padding:40px 24px;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-}
-
-.impact-card h3{
-
-    font-size:3.5rem;
-
-    line-height:1;
-
-    color:var(--primary);
-
-    margin-bottom:12px;
-
-}
-
-.impact-card h4{
-
-    margin-bottom:10px;
-
-    font-size:1.1rem;
-
-}
-
-.impact-card p{
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   TRUSTED BY SECTION
-========================================== */
-
-.trusted-strip{
-
-    padding:30px;
-
-    border-radius:24px;
-
-    background:
-    rgba(255,255,255,.02);
-
-    border:
-    1px solid rgba(255,255,255,.06);
-
-}
-
-.trusted-strip h3{
-
-    text-align:center;
-
-    margin-bottom:24px;
-
-}
-
-.trusted-logos{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:18px;
-
-}
-
-.trusted-logos span{
-
-    padding:12px 20px;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    color:#cbd5e1;
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:1200px){
-
-    .modules-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .journey-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-}
-
-@media (max-width:992px){
-
-    .features-grid,
-    .screenshot-grid,
-    .impact-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .features-grid,
-    .modules-grid,
-    .screenshot-grid,
-    .impact-grid,
-    .journey-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .journey-timeline::before{
-
-        display:none;
-
-    }
-
-    .featured-screenshot{
-
-        border-radius:24px;
-
-    }
-
-}
-/* ==================================================
-   CAMPUS CONNECT V6 MASTER
-   PART 4
-   FORMS + CONTACT + FAQ + BLOG + CAREERS
-================================================== */
-
-/* ==========================================
-   FORM SYSTEM
-========================================== */
-
-.contact-form{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-}
-
-.form-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-
-    margin-bottom:20px;
-
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
-
-    width:100%;
-
-    padding:18px 20px;
-
-    border-radius:18px;
-
-    border:
-    1px solid var(--border);
-
-    background:
-    rgba(255,255,255,.03);
-
-    color:#ffffff;
-
-    outline:none;
-
-    transition:
-    var(--transition);
-
-}
-
-.contact-form textarea{
-
-    min-height:180px;
-
-    resize:vertical;
-
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus{
-
-    border-color:
-    rgba(124,92,255,.45);
-
-    box-shadow:
-    0 0 0 4px rgba(124,92,255,.12);
-
-}
-
-.contact-form button{
-
-    border:none;
-
-}
-
-/* ==========================================
-   CONTACT PAGE
-========================================== */
-
-.contact-layout{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:40px;
-
-    align-items:start;
-
-}
-
-.contact-card{
-
-    padding:32px;
-
-}
-
-.contact-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.contact-card p{
-
-    color:var(--text-secondary);
-
-}
-
-.contact-info-grid{
-
-    display:grid;
-
-    gap:20px;
-
-}
-
-.contact-item{
-
-    display:flex;
-
-    gap:16px;
-
-    align-items:flex-start;
-
-}
-
-.contact-item-icon{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-/* ==========================================
-   FAQ SECTION
-========================================== */
-
-.faq-container{
-
-    max-width:1000px;
-
-    margin:0 auto;
-
-    display:grid;
-
-    gap:20px;
-
-}
-
-.faq-item{
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    overflow:hidden;
-
-}
-
-.faq-question{
-
-    padding:24px 28px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-.faq-question h3{
-
-    font-size:1.05rem;
-
-}
-
-.faq-answer{
-
-    padding:
-    0 28px 24px;
-
-}
-
-.faq-answer p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   BLOG PAGE
-========================================== */
-
-.blog-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.blog-card{
-
-    overflow:hidden;
-
-}
-
-.blog-card img{
-
-    width:100%;
-
-    height:230px;
-
-    object-fit:cover;
-
-}
-
-.blog-content{
-
-    padding:28px;
-
-}
-
-.blog-meta{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:16px;
-
-    color:var(--text-muted);
-
-    font-size:.85rem;
-
-}
-
-.blog-content h3{
-
-    margin-bottom:12px;
-
-}
-
-.blog-content p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   CAREERS PAGE
-========================================== */
-
-.careers-grid{
-
-    display:grid;
-
-    gap:24px;
-
-}
-
-.career-card{
-
-    padding:34px;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    transition:
-    var(--transition);
-
-}
-
-.career-card:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    var(--shadow-card);
-
-}
-
-.career-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.career-meta{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:18px;
-
-}
-
-.career-meta span{
-
-    padding:8px 14px;
-
-    border-radius:999px;
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-    color:#c4b5fd;
-
-    font-size:.85rem;
-
-}
-
-.career-card p{
-
-    color:var(--text-secondary);
-
-    margin-bottom:20px;
-
-}
-
-/* ==========================================
-   DOWNLOAD PAGE
-========================================== */
-
-.download-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.download-card{
-
-    text-align:center;
-
-    padding:40px;
-
-}
-
-.download-card img{
-
-    width:90px;
-
-    margin:0 auto 20px;
-
-}
-
-.download-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.download-card p{
-
-    margin-bottom:20px;
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   SUPPORT PAGE
-========================================== */
-
-.support-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.support-card{
-
-    padding:32px;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-    transition:
-    var(--transition);
-
-}
-
-.support-card:hover{
-
-    transform:
-    translateY(-5px);
-
-    box-shadow:
-    var(--shadow-card);
-
-}
-
-.support-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.support-card p{
-
-    color:var(--text-secondary);
-
-}
-
-.support-highlight{
-
-    padding:50px;
-
-    border-radius:32px;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(124,92,255,.12),
-    rgba(79,70,229,.08)
-    );
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-/* ==========================================
-   DOWNLOAD CTA
-========================================== */
-
-.download-cta{
-
-    text-align:center;
-
-    padding:70px 40px;
-
-    border-radius:32px;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(124,92,255,.12),
-    rgba(79,70,229,.08)
-    );
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-.download-cta h2{
-
-    margin-bottom:20px;
-
-}
-
-.download-cta p{
-
-    max-width:700px;
-
-    margin:0 auto 30px;
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:1200px){
-
-    .blog-grid,
-    .download-grid,
-    .support-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-}
-
-@media (max-width:992px){
-
-    .contact-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .form-grid,
-    .blog-grid,
-    .download-grid,
-    .support-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .support-highlight{
-
-        padding:35px 24px;
-
-    }
-
-    .download-cta{
-
-        padding:50px 24px;
-
-    }
-
-}
-/* ==================================================
-   CAMPUS CONNECT V6 MASTER
-   PART 5
-   TEAM + ROADMAP + FOOTER + LEGAL + 404
-================================================== */
-
-/* ==========================================
-   TEAM PAGE
-========================================== */
-
-.team-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:30px;
-
-}
-
-.team-card{
-
-    text-align:center;
-
-    padding:32px;
-
-}
-
-.team-card img{
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    margin:0 auto 24px;
-
-    border:
-    3px solid rgba(124,92,255,.25);
-
-}
-
-.team-card h3{
-
-    margin-bottom:8px;
-
-}
-
-.team-card .role{
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:16px;
-
-}
-
-.team-card p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   ADVISORS / SUPPORTERS
-========================================== */
-
-.advisor-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.advisor-card{
-
-    padding:30px;
-
-    text-align:center;
-
-    border-radius:24px;
-
-    background:
-    var(--card-bg);
-
-    border:
-    1px solid var(--border);
-
-}
-
-.advisor-card h3{
-
-    margin-bottom:10px;
-
-}
-
-.advisor-card span{
-
-    color:var(--primary);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   ROADMAP
-========================================== */
-
-.roadmap-grid{
-
-    display:grid;
-
-    gap:24px;
-
-}
-
-.roadmap-card{
-
-    padding:34px;
-
-    border-left:
-    4px solid var(--primary);
-
-}
-
-.roadmap-phase{
-
-    display:inline-block;
-
-    margin-bottom:16px;
-
-    padding:8px 14px;
-
-    border-radius:999px;
-
-    background:
-    rgba(124,92,255,.12);
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-    color:#c4b5fd;
-
-    font-size:.85rem;
-
-    font-weight:600;
-
-}
-
-.roadmap-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.roadmap-card p{
-
-    color:var(--text-secondary);
-
-}
-
-/* ==========================================
-   LEGAL PAGES
-========================================== */
-
-.legal-content{
-
-    max-width:1000px;
-
-    margin:0 auto;
-
-}
-
-.legal-content h2{
-
-    margin-top:40px;
-
-    margin-bottom:16px;
-
-}
-
-.legal-content p{
-
-    color:var(--text-secondary);
-
-    margin-bottom:16px;
-
-}
-
-.legal-content ul{
-
-    margin:20px 0;
-
-    padding-left:20px;
-
-}
-
-.legal-content ul li{
-
-    margin-bottom:10px;
-
-    color:var(--text-secondary);
-
-    list-style:disc;
-
-}
-
-/* ==========================================
-   404 PAGE
-========================================== */
-
-.error-page{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:120px 20px;
-
-}
-
-.error-content{
-
-    max-width:700px;
-
-}
-
-.error-code{
-
-    font-size:
-    clamp(6rem,12vw,12rem);
-
-    line-height:1;
-
-    font-weight:900;
-
-    color:var(--primary);
-
-    margin-bottom:20px;
-
-}
-
-.error-content h1{
-
-    margin-bottom:20px;
-
-}
-
-.error-content p{
-
-    margin-bottom:30px;
-
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-.footer{
-
-    background:#020611;
-
-    border-top:
-    1px solid rgba(255,255,255,.05);
-
-    padding:
-    100px 0 30px;
-
-}
-
-.footer-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    2fr 1fr 1fr 1fr 1fr;
-
-    gap:40px;
-
-}
-
-.footer-brand{
-
-    max-width:380px;
-
-}
-
-.footer-logo{
-
-    width:80px;
-
-    margin-bottom:20px;
-
-}
-
-.footer-brand h3{
-
-    margin-bottom:14px;
-
-}
-
-.footer-brand p{
-
-    color:var(--text-secondary);
-
-}
-
-.footer-column h4{
-
-    margin-bottom:18px;
-
-}
-
-.footer-column ul{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-}
-
-.footer-column ul li a{
-
-    color:var(--text-muted);
-
-    transition:
-    var(--transition);
-
-}
-
-.footer-column ul li a:hover{
-
-    color:var(--primary);
-
-}
-
-.footer-bottom{
-
-    margin-top:60px;
-
-    padding-top:25px;
-
-    border-top:
-    1px solid rgba(255,255,255,.05);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-}
-
-.footer-bottom p{
-
-    color:var(--text-muted);
-
-    font-size:.95rem;
-
-}
-
-/* ==========================================
-   HIGHLIGHT BOX
-========================================== */
-
-.highlight-box{
-
-    padding:50px;
-
-    border-radius:32px;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(124,92,255,.12),
-    rgba(79,70,229,.08)
-    );
-
-    border:
-    1px solid rgba(124,92,255,.25);
-
-}
-
-.highlight-box h2{
-
-    margin-bottom:20px;
-
-}
-
-.highlight-box p{
-
-    max-width:800px;
-
-    margin:0 auto;
-
-}
-
-/* ==========================================
-   ANIMATIONS
-========================================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(40px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
-}
-
-@keyframes float{
-
-    0%{
-
-        transform:
-        translateY(0);
-
-    }
-
-    50%{
-
-        transform:
-        translateY(-10px);
-
-    }
-
-    100%{
-
-        transform:
-        translateY(0);
-
-    }
-
-}
-
-@keyframes pulseGlow{
-
-    0%{
-
-        box-shadow:
-        0 0 0 rgba(124,92,255,.15);
-
-    }
-
-    50%{
-
-        box-shadow:
-        0 0 40px rgba(124,92,255,.30);
-
-    }
-
-    100%{
-
-        box-shadow:
-        0 0 0 rgba(124,92,255,.15);
-
-    }
-
-}
-
-.fade-up{
-
-    animation:
-    fadeUp .8s ease forwards;
-
-}
-
-.float{
-
-    animation:
-    float 4s ease-in-out infinite;
-
-}
-
-.pulse{
-
-    animation:
-    pulseGlow 3s infinite;
-
-}
-
-/* ==========================================
-   SCROLLBAR
-========================================== */
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#030712;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:
-    rgba(124,92,255,.35);
-
-    border-radius:999px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:
-    rgba(124,92,255,.55);
-
-}
-
-/* ==========================================
-   UTILITIES
-========================================== */
-
-.mt-1{margin-top:10px;}
-.mt-2{margin-top:20px;}
-.mt-3{margin-top:30px;}
-.mt-4{margin-top:40px;}
-.mt-5{margin-top:50px;}
-
-.mb-1{margin-bottom:10px;}
-.mb-2{margin-bottom:20px;}
-.mb-3{margin-bottom:30px;}
-.mb-4{margin-bottom:40px;}
-.mb-5{margin-bottom:50px;}
-
-.pt-1{padding-top:10px;}
-.pt-2{padding-top:20px;}
-.pt-3{padding-top:30px;}
-.pt-4{padding-top:40px;}
-
-.pb-1{padding-bottom:10px;}
-.pb-2{padding-bottom:20px;}
-.pb-3{padding-bottom:30px;}
-.pb-4{padding-bottom:40px;}
-
-.w-100{
-    width:100%;
-}
-
-.hidden{
-    display:none;
-}
-
-/* ==========================================
-   FINAL RESPONSIVE POLISH
-========================================== */
-
-@media (max-width:1200px){
-
-    .team-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .advisor-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-}
-
-@media (max-width:768px){
-
-    .team-grid,
-    .advisor-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        gap:30px;
-
-    }
-
-    .footer-bottom{
-
-        justify-content:center;
-
-        text-align:center;
-
-    }
-
-    .highlight-box{
-
-        padding:35px 24px;
-
-    }
-
-    .error-code{
-
-        font-size:5rem;
-
-    }
-
-}
-
-@media (prefers-reduced-motion:reduce){
-
-    *{
-
-        animation:none !important;
-
-        transition:none !important;
-
-        scroll-behavior:auto !important;
-
-    }
-
-}
-
-/* ==================================================
-   END OF CAMPUS CONNECT V6 MASTER
-================================================== */
