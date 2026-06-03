@@ -565,3 +565,36 @@ border-radius:12px;
 font-size:1.25rem;
 opacity:.9;
 }
+/* V6 Emergency Layout Fix */
+
+body{
+    overflow-x:hidden;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+}
+
+.hero{
+    padding-top:160px !important;
+    min-height:100vh;
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-grid-bg,
+.hero-glow{
+    pointer-events:none;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
