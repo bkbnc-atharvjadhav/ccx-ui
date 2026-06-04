@@ -3,5 +3,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ccx-ui.vercel.app/sitemap.xml
-
-Disallow: /assets/
