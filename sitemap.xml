@@ -3,93 +3,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://campusconnect.app/</loc>
+        <loc>https://ccx-ui.vercel.app/</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/about.html</loc>
+        <loc>https://ccx-ui.vercel.app/about.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/features.html</loc>
+        <loc>https://ccx-ui.vercel.app/features.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/modules.html</loc>
+        <loc>https://ccx-ui.vercel.app/modules.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/screenshots.html</loc>
+        <loc>https://ccx-ui.vercel.app/screenshots.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/roadmap.html</loc>
+        <loc>https://ccx-ui.vercel.app/roadmap.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/team.html</loc>
+        <loc>https://ccx-ui.vercel.app/team.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/contact.html</loc>
+        <loc>https://ccx-ui.vercel.app/contact.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/download.html</loc>
+        <loc>https://ccx-ui.vercel.app/download.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/faq.html</loc>
+        <loc>https://ccx-ui.vercel.app/faq.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/support.html</loc>
+        <loc>https://ccx-ui.vercel.app/support.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/blog.html</loc>
+        <loc>https://ccx-ui.vercel.app/careers.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/careers.html</loc>
+        <loc>https://ccx-ui.vercel.app/blog.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/privacy-policy.html</loc>
+        <loc>https://ccx-ui.vercel.app/privacy-policy.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/terms-and-conditions.html</loc>
-    </url>
-
-    <!-- ARTICLES -->
-
-    <url>
-        <loc>https://campusconnect.app/articles/building-campus-connect.html</loc>
+        <loc>https://ccx-ui.vercel.app/terms-and-conditions.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/future-of-digital-campuses.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/building-campus-connect.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/student-led-innovation.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/future-of-digital-campuses.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/ai-in-education.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/student-led-innovation.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/connected-campus.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/ai-in-education.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/smart-analytics.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/connected-campus.html</loc>
     </url>
 
     <url>
-        <loc>https://campusconnect.app/articles/student-engagement.html</loc>
+        <loc>https://ccx-ui.vercel.app/articles/smart-analytics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://ccx-ui.vercel.app/articles/student-engagement.html</loc>
     </url>
 
 </urlset>

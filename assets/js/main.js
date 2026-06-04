@@ -1,568 +1,625 @@
-/* ==================================================
-   CAMPUS CONNECT V6 ENHANCED FINAL
-   assets/js/main.js
-================================================== */
+/*
+====================================================
+Campus Connect V2
+assets/js/main.js
+Base Production Foundation
+====================================================
+*/
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
+  "use strict";
 
-    /* ==========================================
-       MOBILE NAVIGATION
-    ========================================== */
+  const $ = (s, p = document) => p.querySelector(s);
+  const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
-    const menuBtn = document.getElementById("mobileMenuBtn");
-    const navLinks = document.getElementById("navLinks");
+  // Navbar Scroll Effect
+  const navbar = $(".navbar");
 
-    if (menuBtn && navLinks) {
+  const onScroll = () => {
+    if (!navbar) return;
+    navbar.classList.toggle("is-scrolled", window.scrollY > 20);
+  };
 
-        menuBtn.addEventListener("click", () => {
+  window.addEventListener("scroll", onScroll);
+  onScroll();
 
-            navLinks.classList.toggle("active");
+  // Mobile Menu Toggle
+  const menuBtn = document.querySelector("[data-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
 
-            menuBtn.innerHTML =
-                navLinks.classList.contains("active")
-                ? "✕"
-                : "☰";
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
 
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+  // Scroll Reveal Animation
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if (revealElements.length) {
+    const revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
         });
-
-        document.querySelectorAll("#navLinks a")
-            .forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    navLinks.classList.remove("active");
-
-                    menuBtn.innerHTML = "☰";
-
-                });
-
-            });
-
-    }
-
-    /* ==========================================
-       NAVBAR SCROLL EFFECT
-    ========================================== */
-
-    const navbar = document.querySelector(".navbar");
-
-    function updateNavbar() {
-
-        if (!navbar) return;
-
-        if (window.scrollY > 50) {
-
-            navbar.style.background =
-                "rgba(3,7,18,.95)";
-
-            navbar.style.backdropFilter =
-                "blur(20px)";
-
-            navbar.style.boxShadow =
-                "0 10px 30px rgba(0,0,0,.25)";
-
-        } else {
-
-            navbar.style.background =
-                "rgba(3,7,18,.80)";
-
-            navbar.style.boxShadow =
-                "none";
-
-        }
-
-    }
-
-    updateNavbar();
-
-    window.addEventListener(
-        "scroll",
-        updateNavbar
+      },
+      {
+        threshold: 0.15
+      }
     );
 
-    /* ==========================================
-       ACTIVE NAVIGATION
-    ========================================== */
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 
-    const currentPage =
-        window.location.pathname
-        .split("/")
-        .pop();
+  // Counter Animation
+  const counters = document.querySelectorAll("[data-counter]");
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(link => {
+  counters.forEach(counter => {
+    const target = Number(counter.dataset.counter);
 
-            const href =
-                link.getAttribute("href");
+    const animateCounter = () => {
+      let current = 0;
 
-            if (
-                href === currentPage ||
-                (
-                    currentPage === "" &&
-                    href === "index.html"
-                )
-            ) {
+      const increment = Math.max(
+        1,
+        Math.ceil(target / 100)
+      );
 
-                link.classList.add("active");
+      const timer = setInterval(() => {
+        current += increment;
 
-            }
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
 
+        counter.textContent =
+          current.toLocaleString();
+      }, 20);
+    };
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter();
+            observer.disconnect();
+          }
         });
+      }
+    );
 
-    /* ==========================================
-       SMOOTH SCROLLING
-    ========================================== */
+    observer.observe(counter);
+  });
 
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(anchor => {
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll(".faq-item");
 
-            anchor.addEventListener(
-                "click",
-                function (e) {
+  faqItems.forEach(item => {
+    const question =
+      item.querySelector(".faq-question");
 
-                    const target =
-                        document.querySelector(
-                            this.getAttribute("href")
-                        );
+    if (!question) return;
 
-                    if (!target) return;
+    question.addEventListener("click", () => {
+      item.classList.toggle("open");
+    });
+  });
 
-                    e.preventDefault();
+  // Smooth Scroll
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
+      anchor.addEventListener("click", e => {
+        const targetId =
+          anchor.getAttribute("href");
 
-                    target.scrollIntoView({
+        if (targetId.length <= 1) return;
 
-                        behavior: "smooth",
-                        block: "start"
+        const target =
+          document.querySelector(targetId);
 
-                    });
+        if (!target) return;
 
-                }
-            );
+        e.preventDefault();
 
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
         });
+      });
+    });
 
-    /* ==========================================
-       SCROLL REVEAL
-    ========================================== */
+  console.log(
+    "🚀 Campus Connect V2 Initialized"
+  );
+})();
 
-    const revealElements =
-        document.querySelectorAll(
+/*
+====================================================
+Campus Connect V2
+FINAL Production main.js
+Version 1.0
+====================================================
+*/
 
-            ".feature-card, \
-             .module-card, \
-             .impact-card, \
-             .team-card, \
-             .advisor-card, \
-             .roadmap-card, \
-             .blog-card, \
-             .download-card, \
-             .support-card, \
-             .journey-step, \
-             .fade-up"
+(function () {
+  "use strict";
 
+  /* ====================================================
+     HELPERS
+  ==================================================== */
+
+  const $ = (selector, parent = document) =>
+    parent.querySelector(selector);
+
+  const $$ = (selector, parent = document) =>
+    [...parent.querySelectorAll(selector)];
+
+  /* ====================================================
+     NAVBAR SCROLL EFFECT
+  ==================================================== */
+
+  const navbar = $(".navbar");
+
+  function handleNavbarScroll() {
+    if (!navbar) return;
+
+    navbar.classList.toggle(
+      "is-scrolled",
+      window.scrollY > 20
+    );
+  }
+
+  window.addEventListener(
+    "scroll",
+    handleNavbarScroll
+  );
+
+  handleNavbarScroll();
+
+  /* ====================================================
+     MOBILE MENU
+  ==================================================== */
+
+  const menuToggle =
+    document.querySelector("[data-menu-toggle]");
+
+  const mobileMenu =
+    document.querySelector("[data-mobile-menu]");
+
+  function closeMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+
+  function openMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+  }
+
+  if (menuToggle && mobileMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+      if (
+        mobileMenu.classList.contains("active")
+      ) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    });
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+        link.addEventListener(
+          "click",
+          closeMenu
         );
+      });
+
+    document.addEventListener("click", e => {
+
+      if (
+        !mobileMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ) {
+        closeMenu();
+      }
+
+    });
+
+    document.addEventListener("keydown", e => {
+
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+
+    });
+
+  }
+
+  /* ====================================================
+     ACTIVE NAVIGATION
+  ==================================================== */
+
+  const currentPage =
+    window.location.pathname
+      .split("/")
+      .pop() || "index.html";
+
+  $$("nav a").forEach(link => {
+
+    const href =
+      link.getAttribute("href");
+
+    if (
+      href &&
+      href.includes(currentPage)
+    ) {
+      link.classList.add("active");
+    }
+
+  });
+
+  /* ====================================================
+     REVEAL ON SCROLL
+  ==================================================== */
+
+  const revealItems =
+    document.querySelectorAll(".reveal");
+
+  if (revealItems.length) {
 
     const revealObserver =
-        new IntersectionObserver(
+      new IntersectionObserver(
+        entries => {
 
-            entries => {
+          entries.forEach(entry => {
 
-                entries.forEach(entry => {
+            if (entry.isIntersecting) {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+              entry.target.classList.add(
+                "revealed"
+              );
 
-                        entry.target.classList.add(
-                            "revealed"
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.15
-            }
-
-        );
-
-    revealElements.forEach(el => {
-
-        el.classList.add(
-            "reveal-hidden"
-        );
-
-        revealObserver.observe(el);
-
-    });
-
-    /* ==========================================
-       FAQ ACCORDION
-    ========================================== */
-
-    const faqItems =
-        document.querySelectorAll(
-            ".faq-item"
-        );
-
-    faqItems.forEach(item => {
-
-        const question =
-            item.querySelector(
-                ".faq-question"
-            );
-
-        const answer =
-            item.querySelector(
-                ".faq-answer"
-            );
-
-        if (
-            !question ||
-            !answer
-        ) return;
-
-        answer.style.display =
-            "none";
-
-        question.addEventListener(
-            "click",
-            () => {
-
-                const isOpen =
-                    item.classList.contains(
-                        "active"
-                    );
-
-                faqItems.forEach(i => {
-
-                    i.classList.remove(
-                        "active"
-                    );
-
-                    const a =
-                        i.querySelector(
-                            ".faq-answer"
-                        );
-
-                    if (a)
-                        a.style.display =
-                            "none";
-
-                });
-
-                if (!isOpen) {
-
-                    item.classList.add(
-                        "active"
-                    );
-
-                    answer.style.display =
-                        "block";
-
-                }
+              revealObserver.unobserve(
+                entry.target
+              );
 
             }
-        );
 
-    });
+          });
 
-    /* ==========================================
-       BACK TO TOP BUTTON
-    ========================================== */
-
-    const scrollBtn =
-        document.getElementById(
-            "scrollTop"
-        );
-
-    function toggleScrollButton() {
-
-        if (!scrollBtn) return;
-
-        if (window.scrollY > 400) {
-
-            scrollBtn.style.opacity =
-                "1";
-
-            scrollBtn.style.visibility =
-                "visible";
-
-        } else {
-
-            scrollBtn.style.opacity =
-                "0";
-
-            scrollBtn.style.visibility =
-                "hidden";
-
+        },
+        {
+          threshold: 0.15
         }
+      );
 
-    }
-
-    toggleScrollButton();
-
-    window.addEventListener(
-        "scroll",
-        toggleScrollButton
+    revealItems.forEach(item =>
+      revealObserver.observe(item)
     );
 
-    if (scrollBtn) {
+  }
 
-        scrollBtn.addEventListener(
-            "click",
-            () => {
+  /* ====================================================
+     COUNTER ANIMATION
+  ==================================================== */
 
-                window.scrollTo({
+  const counters =
+    document.querySelectorAll(
+      "[data-counter]"
+    );
 
-                    top: 0,
+  counters.forEach(counter => {
 
-                    behavior: "smooth"
+    const target =
+      Number(counter.dataset.counter);
 
-                });
+    const animateCounter = () => {
 
-            }
+      let current = 0;
+
+      const increment =
+        Math.max(
+          1,
+          Math.ceil(target / 100)
         );
 
-    }
+      const timer =
+        setInterval(() => {
 
-    /* ==========================================
-       COUNTER ANIMATION
-    ========================================== */
+          current += increment;
 
-    const counters =
-        document.querySelectorAll(
-            ".impact-card h3"
-        );
+          if (current >= target) {
 
-    const counterObserver =
-        new IntersectionObserver(
+            current = target;
 
-            entries => {
+            clearInterval(timer);
 
-                entries.forEach(entry => {
+          }
 
-                    if (
-                        !entry.isIntersecting
-                    ) return;
+          counter.textContent =
+            current.toLocaleString();
 
-                    const counter =
-                        entry.target;
+        }, 20);
 
-                    const text =
-                        counter.innerText;
+    };
 
-                    const value =
-                        parseInt(
-                            text.replace(
-                                /\D/g,
-                                ""
-                            )
-                        );
+    const observer =
+      new IntersectionObserver(
+        entries => {
 
-                    if (
-                        isNaN(value)
-                    ) return;
+          entries.forEach(entry => {
 
-                    let current = 0;
+            if (entry.isIntersecting) {
 
-                    const speed =
-                        value / 40;
+              animateCounter();
 
-                    const interval =
-                        setInterval(() => {
-
-                            current +=
-                                speed;
-
-                            if (
-                                current >= value
-                            ) {
-
-                                current =
-                                    value;
-
-                                clearInterval(
-                                    interval
-                                );
-
-                            }
-
-                            let suffix = "";
-
-                            if (
-                                text.includes(
-                                    "%"
-                                )
-                            )
-                                suffix = "%";
-
-                            if (
-                                text.includes(
-                                    "+"
-                                )
-                            )
-                                suffix = "+";
-
-                            counter.innerText =
-                                Math.floor(
-                                    current
-                                ) + suffix;
-
-                        }, 25);
-
-                    counterObserver.unobserve(
-                        counter
-                    );
-
-                });
+              observer.disconnect();
 
             }
 
-        );
+          });
 
-    counters.forEach(counter => {
+        }
+      );
 
-        counterObserver.observe(
-            counter
-        );
+    observer.observe(counter);
 
-    });
+  });
 
-    /* ==========================================
-       CONTACT FORM
-    ========================================== */
+  /* ====================================================
+     FAQ ACCORDION
+  ==================================================== */
 
-    const contactForm =
-        document.querySelector(
-            "#contactForm"
-        );
+  const faqItems =
+    document.querySelectorAll(".faq-item");
 
-    if (contactForm) {
+  faqItems.forEach(item => {
 
-        contactForm.addEventListener(
-            "submit",
-            function () {
+    const trigger =
+      item.querySelector(
+        ".faq-question"
+      );
 
-                const submitBtn =
-                    contactForm.querySelector(
-                        "button[type='submit']"
-                    );
+    if (!trigger) return;
 
-                if (submitBtn) {
+    trigger.addEventListener(
+      "click",
+      () => {
 
-                    submitBtn.disabled =
-                        true;
+        faqItems.forEach(other => {
 
-                    submitBtn.innerHTML =
-                        "Sending...";
-
-                }
-
-            }
-        );
-
-    }
-
-    /* ==========================================
-       IMAGE HOVER EFFECT
-    ========================================== */
-
-    document
-        .querySelectorAll(
-            ".screenshot-card img"
-        )
-        .forEach(img => {
-
-            img.addEventListener(
-                "mouseenter",
-                () => {
-
-                    img.style.transform =
-                        "scale(1.04)";
-
-                    img.style.transition =
-                        ".4s ease";
-
-                }
-            );
-
-            img.addEventListener(
-                "mouseleave",
-                () => {
-
-                    img.style.transform =
-                        "scale(1)";
-
-                }
-            );
+          if (other !== item) {
+            other.classList.remove("open");
+          }
 
         });
 
-    /* ==========================================
-       PRELOADER SUPPORT
-    ========================================== */
+        item.classList.toggle("open");
 
-    const preloader =
-        document.getElementById(
-            "preloader"
-        );
+      }
+    );
 
-    if (preloader) {
+  });
 
-        window.addEventListener(
-            "load",
-            () => {
+  /* ====================================================
+     SMOOTH SCROLL
+  ==================================================== */
 
-                preloader.style.opacity =
-                    "0";
+  $$('a[href^="#"]').forEach(link => {
 
-                setTimeout(() => {
+    link.addEventListener(
+      "click",
+      e => {
 
-                    preloader.remove();
+        const targetId =
+          link.getAttribute("href");
 
-                }, 500);
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+          return;
+        }
 
-            }
-        );
+        const target =
+          document.querySelector(targetId);
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+    );
+
+  });
+
+  /* ====================================================
+     BACK TO TOP
+  ==================================================== */
+
+  let backToTop =
+    document.querySelector(".back-to-top");
+
+  if (!backToTop) {
+
+    backToTop =
+      document.createElement("button");
+
+    backToTop.className =
+      "back-to-top";
+
+    backToTop.setAttribute(
+      "aria-label",
+      "Back to top"
+    );
+
+    backToTop.innerHTML = "↑";
+
+    document.body.appendChild(
+      backToTop
+    );
+
+  }
+
+  function toggleBackToTop() {
+
+    if (window.scrollY > 600) {
+
+      backToTop.classList.add("show");
+
+    } else {
+
+      backToTop.classList.remove("show");
 
     }
 
-});
+  }
 
-/* ==========================================
-   GLOBAL HELPERS
-========================================== */
+  window.addEventListener(
+    "scroll",
+    toggleBackToTop
+  );
 
-function openExternal(url) {
+  toggleBackToTop();
 
-    window.open(
-        url,
-        "_blank"
+  backToTop.addEventListener(
+    "click",
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+  /* ====================================================
+     IMAGE LAZY EFFECT
+  ==================================================== */
+
+  const images =
+    document.querySelectorAll("img");
+
+  if ("IntersectionObserver" in window) {
+
+    const imageObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "fade-in"
+              );
+
+              imageObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        }
+      );
+
+    images.forEach(image =>
+      imageObserver.observe(image)
     );
 
-}
+  }
 
-function scrollToSection(id) {
+  /* ====================================================
+     CURRENT YEAR
+  ==================================================== */
 
-    const section =
-        document.getElementById(id);
+  const yearElements =
+    document.querySelectorAll(
+      "[data-current-year]"
+    );
 
-    if (!section) return;
+  yearElements.forEach(el => {
 
-    section.scrollIntoView({
+    el.textContent =
+      new Date().getFullYear();
 
-        behavior: "smooth"
+  });
 
-    });
+  /* ====================================================
+     EXTERNAL LINKS
+  ==================================================== */
 
-}
+  $$('a[target="_blank"]').forEach(
+    link => {
 
-/* ==================================================
-   END OF MAIN.JS
-================================================== */
+      if (
+        !link.rel.includes(
+          "noopener"
+        )
+      ) {
+
+        link.rel =
+          "noopener noreferrer";
+
+      }
+
+    }
+  );
+
+  /* ====================================================
+     REDUCED MOTION SUPPORT
+  ==================================================== */
+
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+  if (reducedMotion.matches) {
+
+    document.documentElement.style.scrollBehavior =
+      "auto";
+
+  }
+
+  /* ====================================================
+     INIT
+  ==================================================== */
+
+  console.log(
+    "%c🚀 Campus Connect V2 Loaded",
+    "color:#7C5CFF;font-weight:bold;"
+  );
+
+})();

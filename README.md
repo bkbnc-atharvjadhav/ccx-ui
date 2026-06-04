@@ -1,32 +1,122 @@
-````md
-# Campus Connect V6
+# Campus Connect
 
-Campus Connect is a student-led digital campus platform designed to simplify communication, academics, engagement and campus operations through one unified ecosystem.
+## The Student Super App For Modern Campuses
+
+Campus Connect is a student-led digital campus ecosystem designed to unify academics, communication, engagement, opportunities and student experiences into one modern platform.
+
+Built at:
+
+B. K. Birla Night College, Kalyan
 
 ---
 
-## 🚀 Features
+## Vision
 
-- Attendance Management
+To create a connected digital campus where students can access everything they need through a single unified experience.
+
+---
+
+## Core Modules
+
+### Academics
+
+- Attendance Tracking
+- Lecture Management
+- Timetable System
 - Academic Resources
-- Smart Timetable
-- Notices & Announcements
-- Event Management
-- Student Communities
+
+### Communication
+
+- Announcements
+- Notifications
+- Messaging
+
+### Engagement
+
+- Daily Check-In
+- Rewards
+- Achievements
+- Learning Circles
+
+### Opportunities
+
+- E-Cell
+- Events
+- Workshops
 - Career Opportunities
-- Analytics Dashboard
-- Campus Communication
-- Mobile Friendly Interface
+
+### Analytics
+
+- Attendance Analytics
+- Participation Insights
+- Engagement Metrics
 
 ---
 
-## 🌟 Vision
+## Technology Stack
 
-To create a future-ready digital ecosystem that empowers students, faculty and educational institutions through technology and innovation.
+Frontend:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Platform:
+
+- Campus Connect SaaS Platform
+- Progressive Web App (PWA)
 
 ---
 
-## 👨‍💻 Core Team
+## Project Structure
+
+/
+│
+├── index.html
+├── about.html
+├── features.html
+├── modules.html
+├── screenshots.html
+├── roadmap.html
+├── team.html
+├── contact.html
+├── download.html
+├── faq.html
+├── support.html
+├── careers.html
+├── blog.html
+├── privacy-policy.html
+├── terms-and-conditions.html
+├── 404.html
+│
+├── assets/
+│ ├── css/
+│ │ └── style.css
+│ │
+│ ├── js/
+│ │ └── main.js
+│ │
+│ └── images/
+│
+├── articles/
+│ ├── template.html
+│ ├── building-campus-connect.html
+│ ├── future-of-digital-campuses.html
+│ ├── student-led-innovation.html
+│ ├── ai-in-education.html
+│ ├── connected-campus.html
+│ ├── smart-analytics.html
+│ └── student-engagement.html
+│
+├── robots.txt
+├── sitemap.xml
+└── README.md
+
+---
+
+## Team
+
+### Core Team
 
 - Atharv A. Jadhav
 - Pranshu B. Mishra
@@ -34,88 +124,34 @@ To create a future-ready digital ecosystem that empowers students, faculty and e
 - Avadhut G. Kashid
 - Aditya V. Mishra
 
----
-
-## 🤝 Supporting The Movement
+### Supporting The Movement
 
 - Amit N. Rai
-- Dr. Bipinchandra Wadekar
-- Dr. Rupesh S. Patil
+
+### Institutional Support
+
+Dr. Bipinchandra Wadekar
+Principal
+B. K. Birla Night College, Kalyan
+
+Dr. Rupesh S. Patil
+Co-Ordinator
+Department of Computer Science
 
 ---
 
-## 📁 Project Structure
+## Official Links
 
-```text
-assets/
-├── css/
-├── js/
-├── images/
+Website:
+https://ccx-ui.vercel.app
 
-articles/
-├── template.html
-├── building-campus-connect.html
-├── future-of-digital-campuses.html
-├── student-led-innovation.html
-├── ai-in-education.html
-├── connected-campus.html
-├── smart-analytics.html
-└── student-engagement.html
-
-index.html
-about.html
-features.html
-modules.html
-screenshots.html
-roadmap.html
-team.html
-careers.html
-blog.html
-contact.html
-download.html
-faq.html
-support.html
-privacy-policy.html
-terms-and-conditions.html
-404.html
-
-robots.txt
-sitemap.xml
-README.md
-````
+Platform:
+https://bkbnc-campus-connect.lovable.app
 
 ---
 
-## 🛠 Technology Stack
+## License
 
-* HTML5
-* CSS3
-* JavaScript
-* Responsive Design
-* Modern UI/UX Principles
+© Campus Connect
 
----
-
-## 📖 Blog & Articles
-
-Campus Connect includes a dedicated article system covering:
-
-* Digital Campuses
-* Student Innovation
-* AI in Education
-* Academic Analytics
-* Student Success
-* Campus Technology
-
----
-
-## 🎯 Mission
-
-Building smarter, more connected and future-ready campus experiences.
-
----
-
-© 2026 Campus Connect. All Rights Reserved.
-
-```
-```
+All Rights Reserved.
